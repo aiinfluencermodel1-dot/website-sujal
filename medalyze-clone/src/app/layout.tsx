@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import { ThemeProvider } from "@/lib/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Medalyze - The AI-Native Enterprise RCM & Ambient Platform",
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased bg-black">
-      <body className="font-body min-h-screen flex flex-col bg-black text-[#d9d9d9]">
-        <LayoutWrapper>{children}</LayoutWrapper>
+    <html lang="en" className="dark h-full antialiased" suppressHydrationWarning>
+      <body className="font-body min-h-screen flex flex-col">
+        <ThemeProvider>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

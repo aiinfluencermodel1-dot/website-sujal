@@ -14,13 +14,13 @@ interface ButtonProps {
 
 const variantStyles: Record<string, string> = {
   primary:
-    "bg-[#0A0F1E] text-white hover:bg-[#141b2d] rounded-full",
+    "bg-[var(--text-heading)] text-[var(--bg-primary)] hover:opacity-80 rounded-full",
   secondary:
-    "bg-white text-[#0A0F1E] border border-gray-200 hover:border-gray-400 rounded-full",
+    "bg-[var(--bg-primary)] text-[var(--text-heading)] border border-[var(--border-medium)] hover:border-[var(--text-muted)] rounded-full",
   ghost:
-    "bg-transparent text-[#0A0F1E] hover:bg-gray-100 rounded-full",
+    "bg-transparent text-[var(--text-heading)] hover:bg-[var(--bg-elevated)] rounded-full",
   outline:
-    "bg-transparent text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-full",
+    "bg-transparent text-[var(--accent)] border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white rounded-full",
 };
 
 const sizeStyles: Record<string, string> = {

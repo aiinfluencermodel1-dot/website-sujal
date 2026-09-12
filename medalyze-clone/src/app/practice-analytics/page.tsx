@@ -58,21 +58,21 @@ const stats = [
 export default function PracticeAnalyticsPage() {
   return (
     <main>
-      <section className="bg-black py-20 lg:py-28">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
         <Container size="lg">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]"
+            className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]"
           >
-            <Link href="/" className="transition-colors hover:text-white">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-white">
+            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
-            <span aria-current="page" className="text-white">
+            <span aria-current="page" className="text-[var(--text-heading)]">
               Practice Analytics
             </span>
           </nav>
@@ -83,10 +83,10 @@ export default function PracticeAnalyticsPage() {
                 <span className="chip-label">ADVANCED SOLUTIONS</span>
               </span>
             </span>
-            <h1 className="heading-h3 mt-6 !text-white">
+            <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
               Practice &amp; Hospital Analytics
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#d9d9d9]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
               Get a 360-degree view of your practice or hospital performance
               with real-time analytics that track patient metrics, revenue,
               provider productivity, and operational efficiency—all in one
@@ -104,13 +104,13 @@ export default function PracticeAnalyticsPage() {
         </Container>
       </section>
 
-      <section id="features" className="bg-black py-24">
+      <section id="features" className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="heading-h3 !text-white">
+            <h2 className="heading-h3 !text-[var(--text-heading)]">
               Every Metric That Matters
             </h2>
-            <p className="mt-4 text-lg text-[#d9d9d9]">
+            <p className="mt-4 text-lg text-[var(--text-primary)]">
               Comprehensive analytics built for practices and hospitals that
               want complete visibility into clinical, financial, and
               operational performance.
@@ -123,13 +123,13 @@ export default function PracticeAnalyticsPage() {
               return (
                 <div key={feature.title} className="hairline">
                   <div className="hairline-inner p-8">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#a8f4ff]/10 text-[#a8f4ff]">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
                       <Icon className="h-7 w-7" />
                     </span>
-                    <h3 className="mt-6 text-xl font-semibold text-white">
+                    <h3 className="mt-6 text-xl font-semibold text-[var(--text-heading)]">
                       {feature.title}
                     </h3>
-                    <p className="mt-3 leading-relaxed text-[#d9d9d9]">
+                    <p className="mt-3 leading-relaxed text-[var(--text-primary)]">
                       {feature.description}
                     </p>
                   </div>
@@ -140,15 +140,15 @@ export default function PracticeAnalyticsPage() {
         </Container>
       </section>
 
-      <section className="bg-black py-24">
+      <section className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-5xl font-bold tracking-tight text-white lg:text-6xl">
+                <p className="text-5xl font-bold tracking-tight text-[var(--text-heading)] lg:text-6xl">
                   {stat.value}
                 </p>
-                <p className="mt-3 text-lg text-[#7b7b7b]">{stat.label}</p>
+                <p className="mt-3 text-lg text-[var(--text-muted)]">{stat.label}</p>
               </div>
             ))}
           </div>

@@ -4,30 +4,18 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 import {
-  Brain,
-  Activity,
-  FileText,
-  Shield,
-  BarChart3,
   Stethoscope,
+  Activity,
+  Shield,
+  FileText,
   CreditCard,
-  Scan,
+  Users,
   HeartPulse,
-  Microscope,
+  Building2,
+  Pill,
+  ClipboardList,
+  type LucideIcon,
 } from "lucide-react";
-
-const ringIcons = [
-  { Icon: Brain, label: "AI" },
-  { Icon: Activity, label: "RCM" },
-  { Icon: FileText, label: "Scribe" },
-  { Icon: Shield, label: "Compliance" },
-  { Icon: BarChart3, label: "Analytics" },
-  { Icon: Stethoscope, label: "Clinical" },
-  { Icon: CreditCard, label: "Billing" },
-  { Icon: Scan, label: "Claims" },
-  { Icon: HeartPulse, label: "Patient" },
-  { Icon: Microscope, label: "Lab" },
-];
 
 const heroPills = [
   "8+ Years in Business",
@@ -39,10 +27,59 @@ const heroPills = [
 const HERO_VIDEO =
   "https://cdn.prod.website-files.com/66fb0f1ec709d05e0d47be37%2F696fbe0ad0c11b9f2f37eb51_compressed-video_mp4.mp4";
 
+/* ── Full-page arc dome geometry (SVG viewBox 1600 x 950) ───────────────── */
+const VB_W = 1600;
+const VB_H = 950;
+
+type Arc = { x0: number; y0: number; cx: number; cy: number; x2: number; y2: number };
+
+// Three concentric arcs for eclipse effect — same shape, spaced apart
+const ARC_TOP: Arc = { x0: -80, y0: 480, cx: 800, cy: -120, x2: 1680, y2: 480 };
+const ARC_MID: Arc = { x0: -80, y0: 605, cx: 800, cy: -120, x2: 1680, y2: 605 };
+const ARC_GLOW: Arc = { x0: -80, y0: 695, cx: 800, cy: -120, x2: 1680, y2: 695 };
+// Legacy kept for orbiters
+const ARC_OUTER: Arc = ARC_MID;
+const ARC_INNER: Arc = ARC_MID;
+const ARC_GLOW_D = `M ${ARC_GLOW.x0},${ARC_GLOW.y0} Q ${ARC_GLOW.cx},${ARC_GLOW.cy} ${ARC_GLOW.x2},${ARC_GLOW.y2}`;
+
+function arcPoint(a: Arc, t: number) {
+  const u = 1 - t;
+  return {
+    x: u * u * a.x0 + 2 * u * t * a.cx + t * t * a.x2,
+    y: u * u * a.y0 + 2 * u * t * a.cy + t * t * a.y2,
+  };
+}
+
+type Orbiter = {
+  arc: Arc;
+  dir: 1 | -1;
+  duration: number;
+  offset: number;
+  Icon: LucideIcon;
+};
+
+const ORBITERS: Orbiter[] = [
+  // 5 icons on top ring — well spaced
+  ...[Stethoscope, Activity, Shield, HeartPulse, Building2].map((Icon, i) => ({
+    arc: ARC_TOP,
+    dir: 1 as const,
+    duration: 32000,
+    offset: (i * 0.18),
+    Icon,
+  })),
+  // 5 icons on middle ring — well spaced, different speed
+  ...[FileText, CreditCard, Users, Pill, ClipboardList].map((Icon, i) => ({
+    arc: ARC_MID,
+    dir: -1 as const,
+    duration: 40000,
+    offset: (i * 0.18),
+    Icon,
+  })),
+];
+
 export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
-  const ring1Ref = useRef<HTMLDivElement>(null);
-  const ring2Ref = useRef<HTMLDivElement>(null);
+  const orbitWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -63,179 +100,176 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+  /* Icons gliding along the two half-ring arcs (plain rAF, no deps) */
   useEffect(() => {
-    if (!ring1Ref.current || !ring2Ref.current) return;
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (reduced) return;
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const wrap = orbitWrapRef.current;
+    if (!wrap) return;
+    const nodes = wrap.querySelectorAll<HTMLElement>("[data-orbiter]");
+    if (!nodes.length) return;
 
-    const tokens1 = ring1Ref.current.querySelectorAll<HTMLElement>(
-      ".ring-icon-badge"
-    );
-    const tokens2 = ring2Ref.current.querySelectorAll<HTMLElement>(
-      ".ring-icon-badge"
-    );
+    let raf = 0;
+    const start = performance.now();
 
-    const ctx = gsap.context(() => {
-      tokens1.forEach((el) => {
-        const start = parseFloat(el.dataset.start || "0");
-        gsap.fromTo(
-          el,
-          { offsetDistance: `${start}%` },
-          {
-            offsetDistance: `${start + 100}%`,
-            duration: 80,
-            ease: "none",
-            repeat: -1,
-          }
-        );
+    const tick = (now: number) => {
+      const w = wrap.clientWidth;
+      const h = wrap.clientHeight;
+      const sx = w / VB_W;
+      const sy = h / VB_H;
+
+      nodes.forEach((el, i) => {
+        const cfg = ORBITERS[i % ORBITERS.length];
+        let t = ((now - start) / cfg.duration) * cfg.dir + cfg.offset;
+        t = ((t % 1) + 1) % 1;
+        const p = arcPoint(cfg.arc, t);
+        const edge = Math.min(t, 1 - t) / 0.07;
+        const opacity = Math.max(0, Math.min(1, edge));
+        el.style.transform = `translate(${(p.x * sx).toFixed(1)}px, ${(p.y * sy).toFixed(1)}px) translate(-50%,-50%)`;
+        el.style.opacity = opacity.toFixed(2);
       });
-      tokens2.forEach((el) => {
-        const start = parseFloat(el.dataset.start || "0");
-        gsap.fromTo(
-          el,
-          { offsetDistance: `${start}%` },
-          {
-            offsetDistance: `${start - 100}%`,
-            duration: 100,
-            ease: "none",
-            repeat: -1,
-          }
-        );
-      });
-    }, rootRef);
-    return () => ctx.revert();
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
     <section
       ref={rootRef}
-      className="relative overflow-hidden bg-black pt-40 pb-24 text-center"
+      className="relative overflow-hidden bg-[var(--bg-primary)] pt-52 pb-24 text-center"
     >
-      {/* Rotating ring composition behind hero content */}
-      <div className="pointer-events-none absolute inset-0 -z-0 flex items-center justify-center overflow-hidden">
-        {/* Dark elliptical background disc */}
-        <div
-          className="absolute"
-          style={{
-            width: "110rem",
-            height: "80rem",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(ellipse at center, #0d1117 0%, #080c12 40%, #000000 70%)",
-          }}
-        />
-        {/* Subtle lighting glow on the disc */}
-        <div
-          className="absolute"
-          style={{
-            width: "110rem",
-            height: "80rem",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(ellipse at center, rgba(168,244,255,0.08) 0%, rgba(168,244,255,0.02) 35%, transparent 60%)",
-          }}
-        />
-
-        {/* Ring 1 - outer ellipse (forward orbit) */}
-        <div
-          ref={ring1Ref}
-          className="absolute"
-          style={{ width: "100rem", height: "70rem" }}
+      {/* Full-page arc dome backdrop */}
+      <div
+        ref={orbitWrapRef}
+        className="pointer-events-none absolute left-1/2 top-[340px] -z-0 max-lg:hidden"
+        aria-hidden="true"
+        style={{
+          width: "1800px",
+          maxWidth: "200vw",
+          aspectRatio: "1600 / 950",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <svg
+          viewBox={`0 0 ${VB_W} ${VB_H}`}
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="xMidYMin meet"
         >
-          {/* Elliptical ring line */}
-          <div
-            className="absolute inset-0"
-            style={{
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.12)",
-            }}
-          />
-          {/* Icon badges on outer ring */}
-          {ringIcons.map((item, i) => {
-            const startPct = (i / ringIcons.length) * 100;
-            const { Icon, label } = item;
-            return (
-              <span
-                key={label}
-                data-start={startPct}
-                className="ring-icon-badge absolute flex items-center justify-center"
-                style={{
-                  width: "2.6rem",
-                  height: "2.6rem",
-                  offsetPath:
-                    "ellipse(50% 35.5% at 50% 50%)",
-                  offsetRotate: "0deg",
-                }}
-              >
-                <span
-                  className="flex h-full w-full items-center justify-center rounded-full border border-white/15 bg-black/70 backdrop-blur-sm"
-                  title={label}
-                >
-                  <Icon className="h-4 w-4 text-[#a8f4ff]" strokeWidth={1.5} />
-                </span>
-              </span>
-            );
-          })}
-        </div>
+          <defs>
+            <filter id="hero-glow-soft" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="22" />
+            </filter>
+            <filter id="hero-glow-mid" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+            <filter id="hero-glow-core" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="1.5" />
+            </filter>
+            <linearGradient id="hero-glow-up" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#22d3ee" stopOpacity="1" />
+              <stop offset="60%" stopColor="#22d3ee" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="hero-glow-up-mid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#67e8f9" stopOpacity="1" />
+              <stop offset="50%" stopColor="#67e8f9" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#67e8f9" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="hero-horizon-fade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0" />
+              <stop offset="20%" stopColor="#22d3ee" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#67e8f9" stopOpacity="1" />
+              <stop offset="80%" stopColor="#22d3ee" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="hero-arc-fade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="15%" stopColor="#ffffff" stopOpacity="1" />
+              <stop offset="85%" stopColor="#ffffff" stopOpacity="1" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+            </linearGradient>
+          </defs>
 
-        {/* Ring 2 - inner ellipse (reverse orbit) */}
-        <div
-          ref={ring2Ref}
-          className="absolute"
-          style={{ width: "80rem", height: "56rem" }}
-        >
-          {/* Elliptical ring line */}
-          <div
-            className="absolute inset-0"
-            style={{
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.08)",
-            }}
+          {/* Top thin ring */}
+          <path
+            d={`M ${ARC_TOP.x0},${ARC_TOP.y0} Q ${ARC_TOP.cx},${ARC_TOP.cy} ${ARC_TOP.x2},${ARC_TOP.y2}`}
+            fill="none"
+            stroke="white"
+            strokeWidth="1.2"
+            opacity="0.9"
           />
-          {/* Icon badges on inner ring */}
-          {ringIcons.slice(0, 6).map((item, i) => {
-            const startPct = (i / 6) * 100;
-            const { Icon, label } = item;
-            return (
-              <span
-                key={`inner-${label}`}
-                data-start={startPct}
-                className="ring-icon-badge absolute flex items-center justify-center"
-                style={{
-                  width: "2.2rem",
-                  height: "2.2rem",
-                  offsetPath:
-                    "ellipse(50% 35.5% at 50% 50%)",
-                  offsetRotate: "0deg",
-                }}
-              >
-                <span
-                  className="flex h-full w-full items-center justify-center rounded-full border border-white/10 bg-black/50 backdrop-blur-sm"
-                  title={label}
-                >
-                  <Icon
-                    className="h-3.5 w-3.5 text-white/50"
-                    strokeWidth={1.5}
-                  />
-                </span>
-              </span>
-            );
-          })}
-        </div>
+          {/* Middle thin ring */}
+          <path
+            d={`M ${ARC_MID.x0},${ARC_MID.y0} Q ${ARC_MID.cx},${ARC_MID.cy} ${ARC_MID.x2},${ARC_MID.y2}`}
+            fill="none"
+            stroke="white"
+            strokeWidth="1.2"
+            opacity="0.85"
+          />
+          {/* Faded cyan glow spreading upward toward the text */}
+          <path
+            d={`M ${ARC_GLOW.x0},${ARC_GLOW.y0} Q ${ARC_GLOW.cx},${ARC_GLOW.cy} ${ARC_GLOW.x2},${ARC_GLOW.y2}`}
+            fill="none"
+            stroke="url(#hero-glow-up)"
+            strokeWidth="140"
+            filter="url(#hero-glow-soft)"
+            opacity="0.2"
+          />
+          {/* Extra upward reach toward pills/text */}
+          <path
+            d={`M ${ARC_GLOW.x0 - 60},${ARC_GLOW.y0 - 50} Q ${ARC_GLOW.cx},${ARC_GLOW.cy - 50} ${ARC_GLOW.x2 + 60},${ARC_GLOW.y2 - 50}`}
+            fill="none"
+            stroke="url(#hero-glow-up)"
+            strokeWidth="120"
+            filter="url(#hero-glow-soft)"
+            opacity="0.1"
+          />
+          {/* Gradient eclipse ring — thin bright line */}
+          <path
+            d={`M ${ARC_GLOW.x0},${ARC_GLOW.y0} Q ${ARC_GLOW.cx},${ARC_GLOW.cy} ${ARC_GLOW.x2},${ARC_GLOW.y2}`}
+            fill="none"
+            stroke="url(#hero-horizon-fade)"
+            strokeWidth="2.5"
+            opacity="1"
+          />
+        </svg>
+
+        {/* Moving icons on the two half rings */}
+        {ORBITERS.map(({ Icon }, i) => (
+          <div
+            key={i}
+            data-orbiter
+            className="absolute left-0 top-0 h-10 w-10 will-change-transform"
+            style={{ opacity: 0 }}
+          >
+            <div
+              className="flex h-full w-full items-center justify-center rounded-full"
+              style={{
+                border: "1px solid rgba(255,255,255,0.6)",
+                backgroundColor: "rgba(0,0,0,0.85)",
+                boxShadow: "0 0 12px rgba(125,211,252,0.35)",
+              }}
+            >
+              <Icon size={14} color="#e0f2fe" />
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="container-page relative z-10">
+        {/* Clean headline */}
         <div data-fade>
-          <h1 className="heading-h1 mx-auto max-w-5xl !text-[#d9d9d9]">
+          <h1 className="heading-h1 mx-auto max-w-4xl">
             The AI-Native Enterprise RCM &amp; Billing Platform
           </h1>
         </div>
 
         <p
           data-fade
-          className="text-medium mx-auto mt-6 max-w-2xl text-[#d9d9d9]"
+          className="text-medium mx-auto mt-6 max-w-2xl text-[var(--text-muted)]"
         >
           Turn labor into software with AI-powered intake, documentation,
           coding, claims, and payment solutions for medical and dental
@@ -248,36 +282,42 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           {heroPills.map((p) => (
-            <span key={p} className="pill-border">
-              <span className="pill !text-[#d9d9d9]">{p}</span>
+            <span
+              key={p}
+              className="rounded-full border border-[var(--border-medium)] bg-[var(--bg-primary)]/60 px-4 py-2 text-xs font-medium text-[var(--text-primary)] backdrop-blur-sm"
+            >
+              {p}
             </span>
           ))}
         </div>
 
         {/* Hero video */}
-        <div data-fade className="mx-auto mt-16 max-w-[46.875rem]">
-          <div className="relative aspect-video w-full overflow-hidden rounded-[0.625rem]">
-            <video
-              muted
-              loop
-              autoPlay
-              playsInline
-              src={HERO_VIDEO}
-              poster="https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg"
-              className="h-full w-full object-cover"
-            />
+        <div data-fade className="mx-auto mt-36 max-w-[52rem]">
+          <div className="relative rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)]/40 p-2 backdrop-blur-sm">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+              <video
+                muted
+                loop
+                autoPlay
+                playsInline
+                src={HERO_VIDEO}
+                poster="https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
 
+        {/* CTA buttons */}
         <div
           data-fade
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <Link href="/contact" className="btn btn-v2">
-            30 Days Free Trial
-          </Link>
-          <Link href="/ai-medical-scribe" className="btn btn-v2 btn-outline">
-            See How It Works
+          <Link
+            href="/contact"
+            className="rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,244,255,0.3)]"
+          >
+            Get Assessment
           </Link>
         </div>
       </div>

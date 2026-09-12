@@ -22,21 +22,21 @@ const features = [
 export default function ContactPage() {
   return (
     <main>
-      <section className="bg-black text-white">
+      <section className="bg-[var(--bg-primary)] text-[var(--text-heading)]">
         <Container size="lg" className="py-20 lg:py-28">
-          <nav className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-white">Contact Us</span>
+            <span className="text-[var(--text-heading)]">Contact Us</span>
           </nav>
 
           <div className="max-w-3xl">
-            <h1 className="heading-h3 !text-white">
+            <h1 className="heading-h3 !text-[var(--text-heading)]">
               Get in Touch
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#d9d9d9]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
               We&apos;d love to hear from you. Our team is ready to help optimize your
               revenue cycle.
             </p>
@@ -48,12 +48,12 @@ export default function ContactPage() {
               const inner = (
                 <div className="hairline">
                   <div className="hairline-inner flex items-start gap-4 p-6">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#a8f4ff]/10 text-[#a8f4ff]">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
                       <Icon className="h-5 w-5" />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-[#7b7b7b]">{card.label}</p>
-                      <p className="mt-1 text-sm leading-snug text-white">{card.value}</p>
+                      <p className="text-sm font-medium text-[var(--text-muted)]">{card.label}</p>
+                      <p className="mt-1 text-sm leading-snug text-[var(--text-heading)]">{card.value}</p>
                     </div>
                   </div>
                 </div>
@@ -72,14 +72,14 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-black py-20 lg:py-28">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
         <Container size="lg">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
             <div>
-              <h2 className="heading-h4 !text-white">
+              <h2 className="heading-h4 !text-[var(--text-heading)]">
                 Let&apos;s Start a Conversation
               </h2>
-              <p className="mt-4 text-lg text-[#d9d9d9]">
+              <p className="mt-4 text-lg text-[var(--text-primary)]">
                 Based in St. Petersburg, FL, Medalyze serves healthcare providers
                 across all 50 states. Reach out to learn how we can streamline your
                 revenue cycle.
@@ -88,14 +88,14 @@ export default function ContactPage() {
               <div className="mt-10 space-y-6">
                 <div className="hairline">
                   <div className="hairline-inner flex items-start gap-4 p-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#a8f4ff]/10 text-[#a8f4ff]">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--accent)]/10 text-[var(--accent)]">
                       <MapPin className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-white">
+                      <p className="text-sm font-semibold text-[var(--text-heading)]">
                         Based in St. Petersburg, FL
                       </p>
-                      <p className="mt-1 text-sm text-[#7b7b7b]">
+                      <p className="mt-1 text-sm text-[var(--text-muted)]">
                         Serving healthcare providers across all 50 states
                       </p>
                     </div>
@@ -104,14 +104,14 @@ export default function ContactPage() {
 
                 <div className="hairline">
                   <div className="hairline-inner p-5">
-                    <p className="text-sm font-semibold text-white">
+                    <p className="text-sm font-semibold text-[var(--text-heading)]">
                       What We Offer
                     </p>
                     <ul className="mt-3 space-y-2">
                       {features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-[#d9d9d9]">
+                        <li key={feature} className="flex items-center gap-2 text-sm text-[var(--text-primary)]">
                           <svg
-                            className="h-4 w-4 shrink-0 text-[#a8f4ff]"
+                            className="h-4 w-4 shrink-0 text-[var(--accent)]"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -131,17 +131,17 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#7b7b7b]">
+              <div className="mt-8 flex flex-wrap gap-6 text-sm text-[var(--text-muted)]">
                 <a
                   href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2 transition-colors hover:text-[#a8f4ff]"
+                  className="flex items-center gap-2 transition-colors hover:text-[var(--accent)]"
                 >
                   <Phone className="h-4 w-4" />
                   {contactInfo.phone}
                 </a>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-2 transition-colors hover:text-[#a8f4ff]"
+                  className="flex items-center gap-2 transition-colors hover:text-[var(--accent)]"
                 >
                   <Mail className="h-4 w-4" />
                   {contactInfo.email}

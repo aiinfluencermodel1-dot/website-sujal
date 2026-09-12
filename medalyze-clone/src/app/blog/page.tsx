@@ -9,22 +9,22 @@ export default function BlogPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-black text-white">
+      <section className="bg-[var(--bg-primary)] text-[var(--text-heading)]">
         <div className="container-page py-20 lg:py-28">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]"
+            className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]"
           >
-            <Link href="/" className="transition-colors hover:text-white">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-white">Blog</span>
+            <span className="text-[var(--text-heading)]">Blog</span>
           </nav>
 
           <div className="max-w-3xl">
             <h1 className="heading-h3">Insights for Better Revenue</h1>
-            <p className="mt-6 text-medium text-[#d9d9d9]">
+            <p className="mt-6 text-medium text-[var(--text-primary)]">
               Expert perspectives on revenue cycle management, medical billing,
               and healthcare technology.
             </p>
@@ -33,7 +33,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Post */}
-      <section className="bg-black py-20 lg:py-24">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-24">
         <div className="container-page">
           <Link
             href={`/blog/${featured.slug}`}
@@ -58,18 +58,18 @@ export default function BlogPage() {
                         <span className="chip-label">{featured.category}</span>
                       </span>
                     </span>
-                    <span className="flex items-center gap-1.5 text-sm text-[#7b7b7b]">
+                    <span className="flex items-center gap-1.5 text-sm text-[var(--text-muted)]">
                       <CalendarDays className="h-4 w-4" />
                       {featured.date}
                     </span>
                   </div>
-                  <h2 className="mt-4 text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-[#a8f4ff] sm:text-4xl">
+                  <h2 className="mt-4 text-3xl font-bold tracking-tight text-[var(--text-heading)] transition-colors group-hover:text-[var(--accent)] sm:text-4xl">
                     {featured.title}
                   </h2>
-                  <p className="mt-4 text-medium text-[#d9d9d9]">
+                  <p className="mt-4 text-medium text-[var(--text-primary)]">
                     {featured.excerpt}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 font-medium text-[#a8f4ff]">
+                  <span className="mt-6 inline-flex items-center gap-2 font-medium text-[var(--accent)]">
                     Read More
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -81,7 +81,7 @@ export default function BlogPage() {
       </section>
 
       {/* Posts Grid */}
-      <section className="bg-black py-20 lg:py-24">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-24">
         <div className="container-page">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {rest.map((post) => (
@@ -109,23 +109,23 @@ export default function BlogPage() {
                           <span className="chip-label">{post.category}</span>
                         </span>
                       </span>
-                      <span className="flex items-center gap-1.5 text-sm text-[#7b7b7b]">
+                      <span className="flex items-center gap-1.5 text-sm text-[var(--text-muted)]">
                         <CalendarDays className="h-4 w-4" />
                         {post.date}
                       </span>
                     </div>
-                    <h3 className="mt-4 text-xl font-semibold tracking-tight text-white">
+                    <h3 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text-heading)]">
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="transition-colors group-hover:text-[#a8f4ff]"
+                        className="transition-colors group-hover:text-[var(--accent)]"
                       >
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="mt-3 flex-1 text-[#d9d9d9]">{post.excerpt}</p>
+                    <p className="mt-3 flex-1 text-[var(--text-primary)]">{post.excerpt}</p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-6 inline-flex items-center gap-2 font-medium text-[#a8f4ff]"
+                      className="mt-6 inline-flex items-center gap-2 font-medium text-[var(--accent)]"
                     >
                       Read More
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

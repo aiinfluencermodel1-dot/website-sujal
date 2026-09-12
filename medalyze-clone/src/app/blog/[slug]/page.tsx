@@ -170,21 +170,21 @@ export default async function BlogPostPage({
   return (
     <main>
       {/* Hero / Banner */}
-      <section className="bg-black text-white">
+      <section className="bg-[var(--bg-primary)] text-[var(--text-heading)]">
         <div className="container-page py-20 lg:py-28">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]"
+            className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]"
           >
-            <Link href="/" className="transition-colors hover:text-white">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <Link href="/blog" className="transition-colors hover:text-white">
+            <Link href="/blog" className="transition-colors hover:text-[var(--text-heading)]">
               Blog
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="truncate text-white">{post.title}</span>
+            <span className="truncate text-[var(--text-heading)]">{post.title}</span>
           </nav>
 
           <div className="max-w-4xl">
@@ -196,7 +196,7 @@ export default async function BlogPostPage({
               </span>
             </div>
             <h1 className="mt-6 heading-h3">{post.title}</h1>
-            <span className="mt-4 flex items-center gap-1.5 text-sm text-[#7b7b7b]">
+            <span className="mt-4 flex items-center gap-1.5 text-sm text-[var(--text-muted)]">
               <CalendarDays className="h-4 w-4" />
               {post.date}
             </span>
@@ -205,7 +205,7 @@ export default async function BlogPostPage({
       </section>
 
       {/* Featured Image */}
-      <section className="bg-black pb-8 lg:pb-12">
+      <section className="bg-[var(--bg-primary)] pb-8 lg:pb-12">
         <div className="container-page">
           <div className="hairline">
             <div className="hairline-inner overflow-hidden">
@@ -224,19 +224,19 @@ export default async function BlogPostPage({
       </section>
 
       {/* Content */}
-      <section className="bg-black py-12 lg:py-16">
+      <section className="bg-[var(--bg-primary)] py-12 lg:py-16">
         <div className="container-page max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-medium text-[#d9d9d9]">
+          <p className="text-medium text-[var(--text-primary)]">
             {post.excerpt}
           </p>
 
           <div className="mt-12 space-y-12">
             {sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="heading-h4 !text-white">
+                <h2 className="heading-h4 !text-[var(--text-heading)]">
                   {section.heading}
                 </h2>
-                <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+                <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
                   {section.paragraphs.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
@@ -245,10 +245,10 @@ export default async function BlogPostPage({
             ))}
           </div>
 
-          <div className="mt-16 border-t border-white/10 pt-8">
+          <div className="mt-16 border-t border-[var(--border-subtle)] pt-8">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 font-medium text-[#a8f4ff] transition-colors hover:text-[#a8f4ff]/80"
+              className="inline-flex items-center gap-2 font-medium text-[var(--accent)] transition-colors hover:text-[var(--accent)]/80"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
@@ -258,9 +258,9 @@ export default async function BlogPostPage({
       </section>
 
       {/* Related Posts */}
-      <section className="bg-black py-20 lg:py-24">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-24">
         <div className="container-page">
-          <h2 className="heading-h3 !text-white">
+          <h2 className="heading-h3 !text-[var(--text-heading)]">
             Related Posts
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -289,24 +289,24 @@ export default async function BlogPostPage({
                           <span className="chip-label">{related.category}</span>
                         </span>
                       </span>
-                      <span className="text-sm text-[#7b7b7b]">
+                      <span className="text-sm text-[var(--text-muted)]">
                         {related.date}
                       </span>
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold tracking-tight text-white">
+                    <h3 className="mt-4 text-lg font-semibold tracking-tight text-[var(--text-heading)]">
                       <Link
                         href={`/blog/${related.slug}`}
-                        className="transition-colors group-hover:text-[#a8f4ff]"
+                        className="transition-colors group-hover:text-[var(--accent)]"
                       >
                         {related.title}
                       </Link>
                     </h3>
-                    <p className="mt-3 flex-1 text-sm text-[#d9d9d9]">
+                    <p className="mt-3 flex-1 text-sm text-[var(--text-primary)]">
                       {related.excerpt}
                     </p>
                     <Link
                       href={`/blog/${related.slug}`}
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#a8f4ff]"
+                      className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--accent)]"
                     >
                       Read More
                       <span aria-hidden="true">&rarr;</span>

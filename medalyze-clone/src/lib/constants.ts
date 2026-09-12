@@ -600,8 +600,7 @@ export const footerData: FooterData = {
 
 // ─── Logo ─────────────────────────────────────────────────────────────────────
 
-export const logoUrl =
-  "https://medalyzeus.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-27-2026-11_18_19-PM.png";
+export const logoUrl = "/logo-bigger.png";
 
 // ─── Real Media Assets (verified from medalyzeus.com) ────────────────────────
 

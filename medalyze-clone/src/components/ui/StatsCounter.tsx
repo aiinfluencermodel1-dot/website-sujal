@@ -65,8 +65,8 @@ export default function StatsCounter({ value, label, className = "", theme = "li
     requestAnimationFrame(tick);
   }
 
-  const valueColor = theme === "dark" ? "text-white" : "text-[#0A0F1E]";
-  const labelColor = theme === "dark" ? "text-gray-400" : "text-gray-500";
+  const valueColor = "text-[var(--text-heading)]";
+  const labelColor = "text-[var(--text-muted)]";
 
   return (
     <div ref={ref} className={`flex flex-col items-center ${className}`}>

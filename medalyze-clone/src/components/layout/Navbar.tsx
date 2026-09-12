@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { logoUrl } from "@/lib/constants";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const MENU_LINKS = [
   {
@@ -83,10 +84,6 @@ const MENU_LINKS = [
   },
 ];
 
-const RIGHT_LINKS = [
-  { label: "Contact Us", href: "/contact" },
-];
-
 export default function Navbar({
   onContactOpen,
 }: {
@@ -120,40 +117,40 @@ export default function Navbar({
     return () => document.removeEventListener("click", onClick);
   }, []);
 
-  const activeLink = (key: string) => (openPanel === key ? "text-[#a8f4ff]" : "text-white");
-
   return (
     <header
       ref={headerRef}
-      className={`fixed inset-x-0 top-0 z-[1000] transition-colors duration-300 ${
-        scrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-300 ${
+        scrolled
+          ? "bg-[var(--bg-primary)]/80 backdrop-blur-xl border-b border-[var(--border-subtle)]"
+          : "bg-transparent"
       }`}
     >
       {/* Announcement bar */}
       <div className="announce-bar px-5 py-2 text-center text-xs tracking-wide">
-        <span className="text-white/90">
+        <span className="text-[var(--text-heading)]/90">
           Medical Billing &bull; Dental RCM &bull; AI Scribe &bull; Claims Management &bull; Eligibility Verification
         </span>
-        <Link href="/contact" className="ml-3 text-[#a8f4ff] hover:underline">
+        <Link href="/contact" className="ml-3 text-[var(--accent)] hover:underline">
           Get Started
         </Link>
       </div>
 
       <div className="container-page flex items-center justify-between py-4">
         {/* Brand */}
-        <Link href="/" className="relative z-[1001] flex items-center rounded-xl bg-black/60 px-3 py-1.5 backdrop-blur-sm">
+        <Link href="/" className="relative z-[1001] flex items-center">
           <Image
             src={logoUrl}
             alt="Medalyze"
-            width={200}
-            height={54}
-            className="h-12 w-auto object-contain mix-blend-screen"
+            width={300}
+            height={80}
+            className="h-14 w-auto object-contain"
             unoptimized
           />
         </Link>
 
-        {/* Desktop nav pill */}
-        <nav className="hidden items-center gap-1 rounded-[4rem] border border-white/10 bg-white/5 px-2 py-1.5 backdrop-blur lg:flex">
+        {/* Desktop nav pill - Commure style */}
+        <nav className="hidden items-center gap-1 rounded-full border border-[var(--border-medium)] bg-[var(--bg-primary)]/60 px-2 py-1.5 backdrop-blur-md lg:flex">
           {MENU_LINKS.map((item) => (
             <div key={item.key} className="relative">
               <button
@@ -161,11 +158,15 @@ export default function Navbar({
                   e.stopPropagation();
                   setOpenPanel(openPanel === item.key ? null : item.key);
                 }}
-                className={`flex items-center gap-2 px-4 py-2 text-[0.75rem] font-black uppercase tracking-wider transition-colors ${activeLink(item.key)}`}
+                className={`flex items-center gap-1.5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-wider transition-colors rounded-full ${
+                  openPanel === item.key
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--text-primary)] hover:text-[var(--text-heading)]"
+                }`}
               >
                 {item.label}
                 <ChevronDown
-                  className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  className={`h-3 w-3 transition-transform duration-200 ${
                     openPanel === item.key ? "rotate-180" : ""
                   }`}
                 />
@@ -174,55 +175,51 @@ export default function Navbar({
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <button onClick={onContactOpen} className="btn-borderless">
-            contact
-          </button>
-          {/* Hamburger */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <button
-            onClick={() => setOpenPanel(null)}
-            aria-label="menu"
-            className="nav-burger flex h-9 w-9 flex-col items-center justify-center gap-1"
+            onClick={onContactOpen}
+            className="rounded-full bg-[var(--accent)] px-5 py-2 text-[0.7rem] font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,244,255,0.3)]"
           >
-            <span className="h-px w-5 bg-white" />
-            <span className="h-px w-5 bg-white" />
-            <span className="h-px w-5 bg-white" />
+            Contact
           </button>
         </div>
 
         {/* Mobile burger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="menu"
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1 lg:hidden"
-        >
-          <span className="h-px w-5 bg-white" />
-          <span className="h-px w-5 bg-white" />
-          <span className="h-px w-5 bg-white" />
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="menu"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-[var(--border-medium)] bg-[var(--bg-primary)]/60"
+          >
+            <span className={`h-px w-4 bg-[var(--text-heading)] transition-all ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
+            <span className={`h-px w-4 bg-[var(--text-heading)] transition-all ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mega shell */}
       {openPanel && (
         <div className="absolute inset-x-0 top-full px-4">
           <div className="container-page">
-            <div className="mx-auto max-w-[70rem] rounded-[0.63rem] bg-white text-black shadow-[0_0_34px_#000]">
+            <div className="mx-auto max-w-[70rem] rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-2xl">
               <div className="grid grid-cols-1 gap-0 p-8 md:grid-cols-3">
                 {MENU_LINKS.find((m) => m.key === openPanel)?.columns.map(
                   (col) => (
                     <div key={col.title} className="px-6 py-4">
-                      <p className="text-[0.875rem] font-black uppercase tracking-wide text-[#7b7b7b]">
+                      <p className="text-[0.75rem] font-bold uppercase tracking-wider text-[var(--text-muted)]">
                         {col.title}
                       </p>
-                      <div className="my-3 h-px w-full bg-black/10" />
+                      <div className="my-3 h-px w-full bg-[var(--border-subtle)]" />
                       <ul className="space-y-4">
                         {col.links.map((link) => (
                           <li key={link.name}>
                             <Link href={link.href} className="group block">
-                              <span className="text-[0.95rem] font-medium text-black transition-colors group-hover:text-[#2d62ff]">
+                              <span className="text-[0.9rem] font-medium text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
                                 {link.name}
                               </span>
-                              <span className="block text-[0.8rem] text-[#7b7b7b]">
+                              <span className="block text-[0.75rem] text-[var(--text-muted)]">
                                 {link.desc}
                               </span>
                             </Link>
@@ -240,10 +237,10 @@ export default function Navbar({
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-full z-[999] border-t border-white/10 bg-black px-6 py-6 lg:hidden">
+        <div className="absolute inset-x-0 top-full z-[999] border-t border-[var(--border-subtle)] bg-[var(--bg-primary)]/95 backdrop-blur-xl px-6 py-6 lg:hidden">
           {MENU_LINKS.map((item) => (
             <div key={item.key} className="mb-4">
-              <p className="mb-3 text-[0.75rem] font-black uppercase tracking-wider text-[#a8f4ff]">
+              <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-wider text-[var(--accent)]">
                 {item.label}
               </p>
               <ul className="space-y-2">
@@ -253,7 +250,7 @@ export default function Navbar({
                       <Link
                         href={l.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-1 text-white hover:text-[#a8f4ff]"
+                        className="block py-1.5 text-[var(--text-heading)] hover:text-[var(--accent)]"
                       >
                         {l.name}
                       </Link>
@@ -268,7 +265,7 @@ export default function Navbar({
               setMobileOpen(false);
               onContactOpen?.();
             }}
-            className="btn btn-v2 mt-4"
+            className="mt-4 w-full rounded-full bg-[var(--accent)] py-3 text-sm font-bold uppercase text-black"
           >
             Contact
           </button>

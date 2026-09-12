@@ -43,21 +43,21 @@ export default function DentalSolutionsPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-black py-20 lg:py-28">
+      <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
         <Container size="lg">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]"
+            className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]"
           >
-            <Link href="/" className="transition-colors hover:text-white">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-white">
+            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
-            <span aria-current="page" className="text-white">
+            <span aria-current="page" className="text-[var(--text-heading)]">
               Dental RCM
             </span>
           </nav>
@@ -68,10 +68,10 @@ export default function DentalSolutionsPage() {
                 <span className="chip-label">DENTAL RCM SOLUTIONS</span>
               </span>
             </span>
-            <h1 className="heading-h3 mt-6 !text-white">
+            <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
               Dental Billing That Maximizes Chair Time
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#d9d9d9]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
               {description}
             </p>
             <div className="mt-10">
@@ -84,13 +84,13 @@ export default function DentalSolutionsPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-black py-24">
+      <section id="features" className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="max-w-3xl">
-            <h2 className="heading-h3 !text-white">
+            <h2 className="heading-h3 !text-[var(--text-heading)]">
               Dental RCM Features
             </h2>
-            <p className="mt-4 text-lg text-[#d9d9d9]">
+            <p className="mt-4 text-lg text-[var(--text-primary)]">
               Every step of your dental revenue cycle, tailored to your
               practice.
             </p>
@@ -100,13 +100,13 @@ export default function DentalSolutionsPage() {
             {(features ?? []).map((feature) => (
               <div key={feature.title} className="hairline">
                 <div className="hairline-inner p-8">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a8f4ff]/10 text-[#a8f4ff]">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
                     <Check className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-6 text-lg font-semibold text-white">
+                  <h3 className="mt-6 text-lg font-semibold text-[var(--text-heading)]">
                     {feature.title}
                   </h3>
-                  <p className="mt-3 leading-relaxed text-[#d9d9d9]">
+                  <p className="mt-3 leading-relaxed text-[var(--text-primary)]">
                     {feature.description}
                   </p>
                 </div>
@@ -117,13 +117,13 @@ export default function DentalSolutionsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-black py-24">
+      <section className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="max-w-3xl">
-            <h2 className="heading-h3 !text-white">
+            <h2 className="heading-h3 !text-[var(--text-heading)]">
               Tailored Dental Revenue Management
             </h2>
-            <p className="mt-4 text-lg text-[#d9d9d9]">
+            <p className="mt-4 text-lg text-[var(--text-primary)]">
               Purpose-built dental RCM that fits how your practice actually
               works.
             </p>
@@ -135,13 +135,13 @@ export default function DentalSolutionsPage() {
               return (
                 <div key={benefit.title} className="hairline">
                   <div className="hairline-inner p-8">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a8f4ff]/10 text-[#a8f4ff]">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)]">
                       <Icon className="h-6 w-6" />
                     </span>
-                    <h3 className="mt-6 text-lg font-semibold text-white">
+                    <h3 className="mt-6 text-lg font-semibold text-[var(--text-heading)]">
                       {benefit.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#d9d9d9]">
+                    <p className="mt-3 text-sm leading-relaxed text-[var(--text-primary)]">
                       {benefit.description}
                     </p>
                   </div>

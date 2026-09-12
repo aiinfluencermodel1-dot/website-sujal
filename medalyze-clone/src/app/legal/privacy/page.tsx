@@ -5,42 +5,42 @@ export default function PrivacyPolicyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-black text-white">
+      <section className="bg-[var(--bg-primary)] text-[var(--text-heading)]">
         <div className="container-page py-20 lg:py-28">
-          <nav className="mb-8 flex items-center gap-2 text-sm text-[#7b7b7b]">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex items-center gap-2 text-sm text-[var(--text-muted)]">
+            <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
               Home
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <Link href="/legal" className="transition-colors hover:text-white">
+            <Link href="/legal" className="transition-colors hover:text-[var(--text-heading)]">
               Legal
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-white">Privacy Policy</span>
+            <span className="text-[var(--text-heading)]">Privacy Policy</span>
           </nav>
 
           <h1 className="heading-h3">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-sm text-[#7b7b7b]">Last updated: September 3, 2026</p>
+          <p className="mt-4 text-sm text-[var(--text-muted)]">Last updated: September 3, 2026</p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="bg-black py-16 lg:py-24">
+      <section className="bg-[var(--bg-primary)] py-16 lg:py-24">
         <div className="container-page max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-invert max-w-none">
-            <p className="text-[#d9d9d9]">
+            <p className="text-[var(--text-primary)]">
               Medalyze Medtech LLC (&quot;Medalyze,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
               is committed to protecting your privacy. This Privacy Policy explains how
               we collect, use, disclose, and safeguard your information when you visit
               our website and use our services.
             </p>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               Information We Collect
             </h2>
-            <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 We may collect information that you provide directly to us, including
                 when you fill out a contact form, request a consultation, subscribe to
@@ -62,10 +62,10 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               How We Use Your Information
             </h2>
-            <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>We use the information we collect to:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Respond to your inquiries and provide customer support</li>
@@ -78,10 +78,10 @@ export default function PrivacyPolicyPage() {
               </ul>
             </div>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               Information Sharing
             </h2>
-            <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 We do not sell your personal information. We may share your information
                 with:
@@ -108,10 +108,10 @@ export default function PrivacyPolicyPage() {
               </ul>
             </div>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               Data Security
             </h2>
-            <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 We implement industry-standard administrative, technical, and physical
                 safeguards designed to protect your personal information. These include
@@ -125,10 +125,10 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               Your Rights
             </h2>
-            <div className="mt-4 space-y-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>Depending on your jurisdiction, you may have the right to:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Access the personal information we hold about you</li>
@@ -145,10 +145,10 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <h2 className="mt-12 heading-h4 !text-white">
+            <h2 className="mt-12 heading-h4 !text-[var(--text-heading)]">
               Contact Information
             </h2>
-            <div className="mt-4 text-[#d9d9d9] leading-relaxed">
+            <div className="mt-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 If you have questions about this Privacy Policy or wish to exercise
                 your rights, please contact us:
@@ -163,7 +163,7 @@ export default function PrivacyPolicyPage() {
                 Email:{" "}
                 <a
                   href="mailto:info@medalyzeus.com"
-                  className="text-[#a8f4ff] underline underline-offset-2 hover:text-[#a8f4ff]/80"
+                  className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
                   info@medalyzeus.com
                 </a>
@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
                 Phone:{" "}
                 <a
                   href="tel:+17272085953"
-                  className="text-[#a8f4ff] underline underline-offset-2 hover:text-[#a8f4ff]/80"
+                  className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
                   +1 (727) 208 5953
                 </a>

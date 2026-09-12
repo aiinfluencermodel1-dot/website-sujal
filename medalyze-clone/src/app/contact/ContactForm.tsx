@@ -11,7 +11,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="first-name"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               First Name
             </label>
@@ -19,13 +19,13 @@ export default function ContactForm() {
               id="first-name"
               type="text"
               required
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
           <div>
             <label
               htmlFor="last-name"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               Last Name
             </label>
@@ -33,13 +33,13 @@ export default function ContactForm() {
               id="last-name"
               type="text"
               required
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               Email
             </label>
@@ -47,46 +47,46 @@ export default function ContactForm() {
               id="email"
               type="email"
               required
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
           <div>
             <label
               htmlFor="company"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               Company
             </label>
             <input
               id="company"
               type="text"
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
           <div>
             <label
               htmlFor="phone"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               Phone
             </label>
             <input
               id="phone"
               type="tel"
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
           <div>
             <label
               htmlFor="title"
-              className="block text-small text-[#d9d9d9]"
+              className="block text-small text-[var(--text-primary)]"
             >
               Title
             </label>
             <input
               id="title"
               type="text"
-              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+              className="mt-1.5 w-full rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
             />
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function ContactForm() {
         <div className="mt-5">
           <label
             htmlFor="message"
-            className="block text-small text-[#d9d9d9]"
+            className="block text-small text-[var(--text-primary)]"
           >
             Message
           </label>
@@ -102,7 +102,7 @@ export default function ContactForm() {
             id="message"
             rows={5}
             required
-            className="mt-1.5 w-full resize-none rounded bg-[#0d0d0d] border border-white/10 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+            className="mt-1.5 w-full resize-none rounded bg-[#0d0d0d] border border-[var(--border-subtle)] px-4 py-3 text-sm text-[var(--text-heading)] outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
           />
         </div>
 
@@ -113,7 +113,7 @@ export default function ContactForm() {
             required
             className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/20 bg-[#0d0d0d] accent-[#a8f4ff]"
           />
-          <label htmlFor="consent" className="text-xs leading-relaxed text-[#7b7b7b]">
+          <label htmlFor="consent" className="text-xs leading-relaxed text-[var(--text-muted)]">
             By submitting this form, you agree to receive communications
             from Medalyze Medtech LLC. We respect your privacy and will
             never share your information with third parties. You may

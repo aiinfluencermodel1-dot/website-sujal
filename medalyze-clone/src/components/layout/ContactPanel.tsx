@@ -74,23 +74,23 @@ export default function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
         </div>
 
         {/* Right — form */}
-        <div className="bg-white px-6 py-12 md:px-12">
+        <div className="bg-[var(--bg-card)] px-6 py-12 md:px-12">
           {submitted ? (
             <div className="flex h-full min-h-[50vh] items-center justify-center">
-              <p className="max-w-sm text-center text-lg text-black">
+              <p className="max-w-sm text-center text-lg text-[var(--text-primary)]">
                 Thank you! Your submission has been received!
               </p>
             </div>
           ) : (
             <>
-              <h3 className="heading-h3 !text-black">
+              <h3 className="heading-h3 !text-[var(--text-heading)]">
                 Drop in your information below and we&apos;ll be in touch.
               </h3>
 
               <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                 {fields.map((f) => (
                   <div key={f.label}>
-                    <label className="mb-1 block text-[0.8rem] font-medium text-black">
+                    <label className="mb-1 block text-[0.8rem] font-medium text-[var(--text-primary)]">
                       {f.label}
                       {f.required && <span className="text-red-500"> *</span>}
                     </label>
@@ -98,14 +98,14 @@ export default function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
                       <textarea
                         rows={4}
                         placeholder={f.placeholder}
-                        className="w-full resize-none rounded border border-[#ededed] bg-[#f8f8f8] px-4 py-3 text-sm text-black outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+                        className="w-full resize-none rounded border border-[var(--border-medium)] bg-[var(--bg-elevated)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
                       />
                     ) : (
                       <input
                         type={f.type}
                         required={f.required}
                         placeholder={f.placeholder}
-                        className="w-full rounded border border-[#ededed] bg-[#f8f8f8] px-4 py-3 text-sm text-black outline-none transition-colors focus:border-[#a8f4ff] focus:ring-1 focus:ring-[#a8f4ff]"
+                        className="w-full rounded border border-[var(--border-medium)] bg-[var(--bg-elevated)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition-colors focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
                       />
                     )}
                   </div>

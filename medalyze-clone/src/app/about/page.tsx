@@ -29,7 +29,7 @@ const missionVisionValues = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-black py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-[var(--bg-primary)] py-24 lg:py-32">
         <Image
           src="https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg"
           alt="Healthcare professionals providing care"
@@ -41,15 +41,15 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
 
         <Container size="lg" className="relative">
-          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#7b7b7b]">
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[var(--text-muted)]">
             <ol className="flex items-center gap-2">
               <li>
-                <Link href="/" className="transition-colors hover:text-white">
+                <Link href="/" className="transition-colors hover:text-[var(--text-heading)]">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li aria-current="page" className="text-white">
+              <li aria-current="page" className="text-[var(--text-heading)]">
                 About Us
               </li>
             </ol>
@@ -64,36 +64,36 @@ export default function AboutPage() {
                 height={40}
                 className="h-10 w-10 object-contain"
               />
-              <span className="ml-3 text-sm font-medium text-[#a8f4ff]">
+              <span className="ml-3 text-sm font-medium text-[var(--accent)]">
                 About Medalyze
               </span>
             </div>
-            <h1 className="heading-h3 !text-white">
+            <h1 className="heading-h3 !text-[var(--text-heading)]">
               {companyData.tagline}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#d9d9d9]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
               {companyData.description}
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="bg-black py-20">
+      <section className="bg-[var(--bg-primary)] py-20">
         <Container size="lg">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
             {heroStats.map((stat) => (
               <div key={stat.label} className="text-center lg:text-left">
-                <p className="heading-h2 !text-[#a8f4ff]">
+                <p className="heading-h2 !text-[var(--accent)]">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-lg text-[#7b7b7b]">{stat.label}</p>
+                <p className="mt-2 text-lg text-[var(--text-muted)]">{stat.label}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="bg-black py-20">
+      <section className="bg-[var(--bg-primary)] py-20">
         <Container size="lg">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="hairline">
@@ -108,10 +108,10 @@ export default function AboutPage() {
               </div>
             </div>
             <div>
-              <h2 className="heading-h4 !text-white">
+              <h2 className="heading-h4 !text-[var(--text-heading)]">
                 End-to-End Revenue Cycle Management
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-[#d9d9d9]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
                 {companyData.philosophy}
               </p>
 
@@ -129,13 +129,13 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-black py-24">
+      <section className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="max-w-3xl">
-            <h2 className="heading-h3 !text-white">
+            <h2 className="heading-h3 !text-[var(--text-heading)]">
               Inspirational Growth - Our Vision and Mission
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#d9d9d9]">
+            <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
               We are driven by a shared purpose to transform healthcare
               revenue operations through the careful combination of advanced
               technology and human expertise.
@@ -146,10 +146,10 @@ export default function AboutPage() {
             {missionVisionValues.map((item) => (
               <div key={item.title} className="hairline">
                 <div className="hairline-inner p-8">
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-[var(--text-heading)]">
                     {item.title}
                   </h3>
-                  <p className="mt-4 leading-relaxed text-[#d9d9d9]">
+                  <p className="mt-4 leading-relaxed text-[var(--text-primary)]">
                     {item.text}
                   </p>
                 </div>

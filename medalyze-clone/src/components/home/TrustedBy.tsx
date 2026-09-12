@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { trustedByData, assets } from "@/lib/constants";
 
-const partners = [
-  "City Health Hospital",
-  "Valley Medical Center",
-  "Coastal Dental Group",
-  "Summit Care Clinic",
-  "Metro Health Partners",
-  "Pinnacle Medical",
+const partnerLogos = [
+  { name: "City Health Hospital", abbr: "CH" },
+  { name: "Valley Medical Center", abbr: "VM" },
+  { name: "Coastal Dental Group", abbr: "CD" },
+  { name: "Summit Care Clinic", abbr: "SC" },
+  { name: "Metro Health Partners", abbr: "MH" },
+  { name: "Pinnacle Medical", abbr: "PM" },
 ];
 
 interface CountUpStatProps {
@@ -72,54 +72,42 @@ function CountUpStat({ value, label }: CountUpStatProps) {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="heading-h2 !text-[#a8f4ff]">
+      <div className="heading-h2 !text-[var(--accent)]">
         {formatted}
         {suffix}
       </div>
-      <p className="text-small mt-3 !text-[#d9d9d9]">{label}</p>
+      <p className="text-small mt-3 text-[var(--text-muted)]">{label}</p>
     </div>
   );
 }
 
 export default function TrustedBy() {
   return (
-    <section className="bg-black">
-      <div className="overflow-hidden py-20 md:py-24">
+    <section className="bg-[var(--bg-primary)]">
+      {/* Partner logos - Commure style clean row */}
+      <div className="border-b border-[var(--border-subtle)] py-16 md:py-20">
         <div className="container-page">
-          <p className="text-regular text-center uppercase tracking-[0.2em] !text-[#d9d9d9]">
+          <p className="text-small text-center uppercase tracking-[0.2em] text-[var(--text-muted)]">
             Trusted by Leading Health Systems
           </p>
-        </div>
 
-        <div className="mt-12 space-y-6 [&:hover_*]:[animation-play-state:paused]">
-          <div
-            className="flex w-max items-center gap-10"
-            style={{ animation: "logo-marquee-loop 50s linear infinite" }}
-          >
-            {[...partners, ...partners].map((name, i) => (
-              <span key={`a-${i}`} className="chip-border shrink-0">
-                <span className="chip">
-                  <span className="chip-label !text-white">{name}</span>
-                </span>
-              </span>
-            ))}
-          </div>
-
-          <div
-            className="flex w-max items-center gap-10"
-            style={{ animation: "logo-marquee-loop2 50s linear infinite" }}
-          >
-            {[...partners, ...partners].map((name, i) => (
-              <span key={`b-${i}`} className="chip-border shrink-0">
-                <span className="chip">
-                  <span className="chip-label !text-white">{name}</span>
-                </span>
-              </span>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {partnerLogos.map((partner) => (
+              <div
+                key={partner.name}
+                className="flex items-center gap-2 text-[var(--text-muted)] opacity-50 transition-opacity hover:opacity-100"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--text-muted)]/10 text-xs font-bold">
+                  {partner.abbr}
+                </div>
+                <span className="text-sm font-medium">{partner.name}</span>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
+      {/* Stats section - Commure style with map background */}
       <div className="relative overflow-hidden py-24 md:py-32">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <Image
@@ -127,16 +115,16 @@ export default function TrustedBy() {
             alt=""
             width={900}
             height={600}
-            className="h-full w-full max-w-4xl object-contain opacity-[0.15]"
+            className="h-full w-full max-w-4xl object-contain opacity-[0.08]"
           />
         </div>
 
         <div className="container-page relative">
-          <h2 className="heading-h3 text-center !text-white">
+          <h2 className="heading-h3 text-center">
             Proven Outcomes from Deploying Medalyze
           </h2>
 
-          <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-12 md:grid-cols-4">
+          <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-8 md:grid-cols-4">
             {trustedByData.stats.map((stat) => (
               <CountUpStat
                 key={stat.label}
