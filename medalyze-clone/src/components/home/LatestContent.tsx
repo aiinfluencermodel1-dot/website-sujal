@@ -22,8 +22,8 @@ export default function LatestContent() {
             Playbooks for Business on Autopilot
           </h2>
           <p className="text-regular mt-4 text-[var(--text-muted)]">
-            Stay informed with the latest trends and strategies in revenue
-            cycle management.
+            Stay informed with playbooks, guides, and systems for business
+            on autopilot.
           </p>
         </div>
 
