@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import CTASection from "@/components/home/CTASection";
+import TiltCard from "@/components/ui/TiltCard";
 import Container from "@/components/ui/Container";
 import { ChevronRight } from "lucide-react";
 
@@ -116,7 +117,8 @@ export default function UseCasesPage() {
         <Container size="lg">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {useCases.map((useCase) => (
-              <article key={useCase.industry} className="hairline">
+              <TiltCard key={useCase.industry} max={5}>
+              <article className="hairline h-full">
                 <div className="hairline-inner p-8">
                   <h2 className="text-2xl font-semibold text-[var(--text-heading)]">
                     {useCase.industry}
@@ -143,6 +145,7 @@ export default function UseCasesPage() {
                   </div>
                 </div>
               </article>
+              </TiltCard>
             ))}
           </div>
         </Container>

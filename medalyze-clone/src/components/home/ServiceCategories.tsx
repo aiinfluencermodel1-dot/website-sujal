@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { serviceCategories } from "@/lib/constants";
+import TiltCard from "@/components/ui/TiltCard";
 import { ArrowRight, Smartphone, Monitor, Tablet } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -157,7 +158,7 @@ export default function ServiceCategories() {
                     className={flipped ? "md:order-1" : "md:order-2"}
                     data-reveal
                   >
-                    <div className="relative">
+                    <TiltCard className="relative" max={7}>
                       {/* Subtle glow behind device */}
                       <div className="absolute inset-0 rounded-3xl bg-[var(--accent)]/5 blur-3xl" />
                       <div className="relative rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)]/60 p-3 backdrop-blur-sm">
@@ -171,7 +172,7 @@ export default function ServiceCategories() {
                           />
                         </div>
                       </div>
-                    </div>
+                    </TiltCard>
                   </div>
                 </div>
 
