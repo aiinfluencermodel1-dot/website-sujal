@@ -142,7 +142,7 @@ export default function Hero() {
       {/* Full-page arc dome backdrop */}
       <div
         ref={orbitWrapRef}
-        className="pointer-events-none absolute left-1/2 top-[340px] -z-0 max-lg:hidden"
+        className="pointer-events-none absolute left-1/2 top-[560px] -z-0 max-lg:hidden"
         aria-hidden="true"
         style={{
           width: "1800px",

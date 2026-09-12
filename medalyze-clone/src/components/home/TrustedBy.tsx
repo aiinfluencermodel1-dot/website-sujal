@@ -19,10 +19,11 @@ interface CountUpStatProps {
 }
 
 function parseValue(value: string) {
-  const match = value.match(/^([\d.]+)(.*)$/);
+  const match = value.match(/^([^\d.]*)([\d.]+)(.*)$/);
   return {
-    target: match ? parseFloat(match[1]) : 0,
-    suffix: match ? match[2] : "",
+    prefix: match ? match[1] : "",
+    target: match ? parseFloat(match[2]) : 0,
+    suffix: match ? match[3] : "",
   };
 }
 
@@ -65,7 +66,7 @@ function CountUpStat({ value, label }: CountUpStatProps) {
     return () => observer.disconnect();
   }, [value]);
 
-  const { suffix } = parseValue(value);
+  const { prefix, suffix } = parseValue(value);
   const formatted = Number.isInteger(display)
     ? display.toString()
     : display.toFixed(1);
@@ -73,6 +74,7 @@ function CountUpStat({ value, label }: CountUpStatProps) {
   return (
     <div ref={ref} className="text-center">
       <div className="heading-h2 !text-[var(--accent)]">
+        {prefix}
         {formatted}
         {suffix}
       </div>

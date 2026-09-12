@@ -290,6 +290,7 @@
 
 /* ── Feature chips (gradient hairline pill) ────────────────────────────── */
 .chip-border {
+  display: inline-flex;
   border-radius: 2.625rem;
   padding: 1px;
   background-image: var(--chip-gradient);

@@ -1,12 +1,13 @@
 import { whyChooseUs } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 import {
-  ShieldCheck,
+  PenTool,
+  Blocks,
   TrendingUp,
   Handshake,
 } from "lucide-react";
 
-const icons = [ShieldCheck, ShieldCheck, TrendingUp, Handshake];
+const icons = [PenTool, Blocks, TrendingUp, Handshake];
 
 export default function WhyChooseUs() {
   return (
