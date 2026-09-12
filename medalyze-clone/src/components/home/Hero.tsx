@@ -261,7 +261,8 @@ export default function Hero() {
         {/* Clean headline */}
         <div data-fade>
           <h1 className="heading-h1 mx-auto max-w-4xl">
-            Put Your Business on Autopilot
+            AI Automation Solutions That Do the Work Your Team Doesn&apos;t
+            Have Time For
           </h1>
         </div>
 
@@ -269,8 +270,20 @@ export default function Hero() {
           data-fade
           className="text-medium mx-auto mt-6 max-w-2xl text-[var(--text-muted)]"
         >
-          We build AI chatbots, voice agents, and workflow automations that
-          capture leads, close sales, and eliminate busywork—around the clock.
+          We design, build, and deploy custom AI automation, software, and
+          workflows that eliminate repetitive work, cut operational costs, and
+          help your company run faster—without hiring more people.
+        </p>
+
+        <p
+          data-fade
+          className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]"
+        >
+          NexaFlow AI is an AI automation company that helps businesses replace
+          manual, repetitive tasks with intelligent software and
+          workflows—including customer support automation, sales and lead
+          automation, data entry automation, reporting automation, and custom AI
+          agents built around your existing tools and processes.
         </p>
 
         {/* Stat pills */}
@@ -313,7 +326,13 @@ export default function Hero() {
             href="/contact"
             className="rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,244,255,0.3)]"
           >
-            Book a Free Audit
+            Book a Free AI Automation Audit
+          </Link>
+          <Link
+            href="/use-cases"
+            className="rounded-full border border-[var(--accent)] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[var(--accent)] transition-all hover:bg-[var(--accent)]/10"
+          >
+            See Use Cases
           </Link>
         </div>
       </div>

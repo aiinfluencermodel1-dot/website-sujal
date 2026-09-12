@@ -1,11 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { faqs } from "@/lib/constants";
 import { ChevronDown } from "lucide-react";
 export const dynamic = "force-static";
 
-export default function FAQSection() {
+export default function FAQSection({
+  items = faqs,
+  showAllLink = true,
+}: {
+  items?: typeof faqs;
+  showAllLink?: boolean;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   function toggle(index: number) {
@@ -20,7 +27,7 @@ export default function FAQSection() {
         </h2>
 
         <div className="mx-auto mt-14 max-w-3xl space-y-3">
-          {faqs.map((faq, i) => {
+          {items.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
@@ -57,6 +64,17 @@ export default function FAQSection() {
             );
           })}
         </div>
+
+        {showAllLink && (
+          <div className="mt-10 text-center">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] transition-all hover:gap-3"
+            >
+              View all FAQs <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

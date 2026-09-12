@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { blogPosts } from "@/lib/constants";
 import { ChevronRight, ArrowRight, CalendarDays } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "AI Automation Blog — Guides, Tips & Case Studies",
+  description:
+    "Practical guides on AI automation, workflow optimization, and reducing manual work with AI for businesses.",
+};
 
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts;

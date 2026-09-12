@@ -243,24 +243,24 @@ export const testimonials: Testimonial[] = [
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    title: "Automation Experts",
+    title: "Custom-Built, Not Templated",
     description:
-      "Specialists in AI agents, integrations, and workflow design—not generalists learning on your dime.",
+      "Every automation is designed around your actual process—never a generic template.",
   },
   {
-    title: "Results Obsessed",
+    title: "Tool-Agnostic",
     description:
-      "Every build is tied to a metric: more leads, faster follow-up, fewer hours, higher revenue.",
+      "We integrate with the software you already use instead of forcing a switch.",
   },
   {
-    title: "Fast Deployment",
+    title: "Measurable Results",
     description:
-      "Most automations go live in 2–4 weeks, not quarters. You see ROI fast.",
+      "Every project is built to show clear time and cost savings you can verify.",
   },
   {
     title: "Ongoing Support",
     description:
-      "Monitoring, tuning, and improvements included—your systems keep getting smarter.",
+      "We monitor, maintain, and improve automations after launch.",
   },
 ];
 
@@ -327,24 +327,129 @@ export const blogPosts: BlogPost[] = [
 
 export const faqs: FAQ[] = [
   {
-    question: "What services does NexaFlow provide?",
+    question: "What is AI automation?",
     answer:
-      "NexaFlow designs and deploys AI chatbots, voice AI agents, CRM and workflow automations, lead generation systems, AI content engines, and analytics dashboards—everything a business needs to run on autopilot.",
+      "AI automation is the use of artificial intelligence to perform repetitive business tasks—like data entry, customer replies, or reporting—automatically, without manual effort each time.",
   },
   {
-    question: "How fast can an automation go live?",
+    question: "How much does AI automation cost?",
     answer:
-      "Most projects launch in 2–4 weeks. Chatbots and follow-up sequences are often live in days; larger CRM and multi-system builds take a few weeks including testing.",
+      "Cost depends on the complexity of the workflow and the number of processes automated; most engagements start with a free audit to scope an accurate quote.",
   },
   {
-    question: "Do you work with our existing tools?",
+    question: "How long does implementation take?",
     answer:
-      "Yes. We integrate with 100+ platforms including HubSpot, Salesforce, GoHighLevel, Shopify, Slack, Gmail, Calendly, Stripe, and more. If it has an API, we can automate it.",
+      "Most custom AI automation workflows are designed, built, and deployed within a few weeks of the initial audit.",
   },
   {
-    question: "How much does it cost?",
+    question: "Can AI automation work with the tools I already use?",
     answer:
-      "Projects typically start with a free audit, then fixed-scope builds tailored to your goals—plus optional monthly care plans for monitoring and optimization. Book a call and we'll scope it precisely.",
+      "Yes. We integrate with 100+ platforms including HubSpot, Salesforce, GoHighLevel, Shopify, Slack, Gmail, Calendly, and Stripe. If it has an API, we can automate it.",
+  },
+];
+
+// ─── Full FAQ (AEO-optimized, used on /faq) ───────────────────────────────────
+
+export const allFaqs: FAQ[] = [
+  {
+    question: "What is AI automation for business?",
+    answer:
+      "AI automation for business is the use of artificial intelligence to perform repetitive tasks—such as data entry, customer replies, lead follow-up, and reporting—automatically, without requiring manual human effort each time the task occurs.",
+  },
+  {
+    question: "How is AI automation different from regular software automation?",
+    answer:
+      "Regular software automation follows fixed, rule-based steps with no flexibility, while AI automation can interpret context, handle variation in input (like natural language questions), and make decisions within defined boundaries.",
+  },
+  {
+    question: "How much time can AI automation save a business?",
+    answer:
+      "Most businesses save several hours per employee per week by automating repetitive tasks like data entry, follow-ups, and reporting, though the exact savings depend on how many manual processes are automated.",
+  },
+  {
+    question: "How much does AI automation cost?",
+    answer:
+      "The cost of AI automation depends on the number of processes automated, the complexity of integration required, and whether custom software development is needed; most engagements start with a free audit to scope accurate pricing.",
+  },
+  {
+    question: "Do I need technical knowledge to use AI automation?",
+    answer:
+      "No. NexaFlow builds, integrates, and maintains the system for you, so your team only interacts with the results—such as a chatbot, dashboard, or automated workflow—without needing to code.",
+  },
+  {
+    question: "What business tools can AI automation connect with?",
+    answer:
+      "AI automation can connect with CRMs, email platforms, spreadsheets, project management tools, e-commerce platforms, accounting software, and most business tools that offer an integration or API.",
+  },
+  {
+    question: "How long does it take to build a custom AI automation system?",
+    answer:
+      "Timelines vary by complexity, but most custom AI automation workflows are designed, built, and deployed within a few weeks after the initial business process audit.",
+  },
+  {
+    question: "Is AI automation only useful for large companies?",
+    answer:
+      "No. Small and medium businesses often benefit the most from AI automation because it allows them to handle more work and grow without a proportional increase in hiring.",
+  },
+  {
+    question: "What's the difference between AI automation and traditional software?",
+    answer:
+      "Traditional software requires manual input and decisions at each step, while AI automation can understand context, apply rules and reasoning, and complete tasks with little to no human involvement.",
+  },
+  {
+    question: "Can AI automation replace my customer support team?",
+    answer:
+      "AI automation typically handles routine, repetitive customer questions instantly and escalates complex or sensitive issues to human staff—working alongside a support team rather than fully replacing it.",
+  },
+  {
+    question: "Is AI automation secure for handling business data?",
+    answer:
+      "NexaFlow implements encrypted connections, access controls, data minimization, and DPAs on every engagement. Specific security practices for your stack are confirmed during the audit.",
+  },
+  {
+    question: "What happens if the AI automation makes a mistake?",
+    answer:
+      "Well-designed AI automation includes escalation rules that route uncertain or high-risk cases to a human for review, and we monitor and refine every system after deployment to reduce errors over time.",
+  },
+  {
+    question: "Can AI automation work with the tools I already use?",
+    answer:
+      "Yes. Most AI automation is designed to integrate with your existing software stack—HubSpot, Salesforce, GoHighLevel, Shopify, Slack, Gmail, and 100+ more—rather than requiring you to switch tools.",
+  },
+  {
+    question: "What industries benefit most from AI automation?",
+    answer:
+      "Industries with high volumes of repetitive administrative tasks—such as e-commerce, real estate, healthcare, finance, HR, and professional services—tend to see the fastest and most measurable benefits.",
+  },
+  {
+    question: "How do I know which processes should be automated first?",
+    answer:
+      "The best starting points are high-frequency, repetitive, rule-based tasks that consume significant employee time—which is exactly what our free process audit is designed to identify.",
+  },
+  {
+    question: "Will AI automation eliminate jobs at my company?",
+    answer:
+      "AI automation is used to remove repetitive tasks from existing roles, freeing employees to focus on higher-value work such as strategy, relationship-building, and decision-making, rather than eliminating positions.",
+  },
+  {
+    question: "What is an AI agent?",
+    answer:
+      "An AI agent is a software system that can understand a task, make decisions within defined rules, and take action—such as responding to a customer, updating a record, or triggering a workflow—with minimal human input.",
+  },
+  {
+    question: "What ongoing support is included after deployment?",
+    answer:
+      "Every NexaFlow engagement includes post-launch monitoring, performance optimization, and troubleshooting support to ensure the system keeps performing accurately as your business changes.",
+  },
+  {
+    question: "Can AI automation scale as my business grows?",
+    answer:
+      "Yes. AI automation systems are built to handle increasing volume without a proportional increase in cost or manual effort—one of the primary advantages over hiring additional staff.",
+  },
+  {
+    question: "How do I get started with AI automation?",
+    answer:
+      "The first step is a free process audit: book a call and we'll review your current workflows and identify the highest-impact automation opportunities for your business.",
   },
 ];
 
@@ -353,11 +458,11 @@ export const faqs: FAQ[] = [
 export const companyData = {
   tagline: "Your unfair advantage in AI",
   description:
-    "Since 2021, we've helped startups, agencies, and local businesses replace manual busywork with AI systems that sell, support, and scale. Our goal is simple: give every business leverage that used to require a huge team.",
+    "NexaFlow AI is an AI automation company focused on one thing: helping businesses eliminate manual, repetitive work through custom-built AI software and workflows. We don't sell generic chatbot templates or one-size-fits-all tools—every system starts with understanding how your business actually operates.",
   philosophy:
     "Technology should pay for itself. We co-build every automation with the team that uses it—radical collaboration between our engineers and your operators—so systems actually get adopted and actually drive revenue.",
   mission:
-    "To make advanced AI automation accessible to every business by designing systems that capture more leads, close more sales, and eliminate repetitive work—measurably and fast.",
+    "To help businesses do more with the team they already have by removing repetitive, low-value tasks through intelligent automation.",
   vision:
     "To become the most trusted AI automation partner for growing businesses—setting the standard for deployment speed, reliability, and ROI across the industry.",
   values:

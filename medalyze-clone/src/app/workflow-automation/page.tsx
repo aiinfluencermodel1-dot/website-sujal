@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   Check,
   TrendingUp,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Workflow & CRM Automation Services | NexaFlow AI",
+  description:
+    "Connect your tools into automations that follow up, assign, remind, and report. 100+ integrations, live in weeks.",
+};
 
 const features = [
   {

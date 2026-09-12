@@ -48,6 +48,8 @@ const MENU_LINKS = [
         title: "Insights",
         links: [
           { name: "Blog", desc: "Automation playbooks & AI guides", href: "/blog" },
+          { name: "Use Cases", desc: "AI automation by industry", href: "/use-cases" },
+          { name: "FAQ", desc: "Answers about AI automation", href: "/faq" },
           { name: "Customer Stories", desc: "Real impact from our clients", href: "/testimonials" },
           { name: "Guides", desc: "In-depth automation resources", href: "/blog" },
         ],

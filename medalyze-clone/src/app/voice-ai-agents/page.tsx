@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   BellRing,
   BarChart3,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Voice AI Agents That Answer Every Call | NexaFlow AI",
+  description:
+    "AI phone agents that qualify callers and book appointments in natural conversation, 24/7, in 40+ languages.",
+};
 
 const features = [
   {

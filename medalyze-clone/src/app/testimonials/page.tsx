@@ -1,8 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { testimonials } from "@/lib/constants";
 import { Star } from "lucide-react";
 import CTASection from "@/components/home/CTASection";
 import Container from "@/components/ui/Container";
+
+export const metadata: Metadata = {
+  title: "Client Reviews — NexaFlow AI Automation Results",
+  description:
+    "See how businesses save hours and grow revenue with NexaFlow AI chatbots, voice agents, and workflow automations.",
+};
 
 const resultMetrics = [
   { value: "12K+", label: "Hours saved monthly" },

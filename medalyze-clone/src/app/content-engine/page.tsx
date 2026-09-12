@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   Sparkles,
   BarChart3,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "AI Content Engine — 30 Days of Content | NexaFlow AI",
+  description:
+    "Turn one weekly idea into a month of posts, videos, and emails with an AI content system trained on your voice.",
+};
 
 const features = [
   {

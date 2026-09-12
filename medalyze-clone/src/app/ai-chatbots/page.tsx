@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   Globe,
   ShieldCheck,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "AI Chatbots for Business | NexaFlow AI",
+  description:
+    "Custom AI chatbots that capture leads, answer questions, and book meetings 24/7. Website, WhatsApp & SMS.",
+};
 
 const features = [
   {

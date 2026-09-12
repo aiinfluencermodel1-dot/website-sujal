@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   Zap,
   TrendingUp,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Analytics Dashboards & Reporting Automation | NexaFlow AI",
+  description:
+    "Live dashboards, revenue forecasting, and automated reports that turn scattered data into clear decisions.",
+};
 
 const features = [
   {

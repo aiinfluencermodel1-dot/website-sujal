@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
@@ -9,6 +10,12 @@ import {
   TrendingUp,
   Zap,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "AI Lead Generation Systems | NexaFlow AI",
+  description:
+    "Self-running lead machines: instant response, nurture sequences, dead-lead revival, and show-up automation.",
+};
 
 const features = [
   {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import CTASection from "@/components/home/CTASection";
 import {
   ShieldCheck,
@@ -9,6 +10,12 @@ import {
   KeyRound,
   ChevronRight,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Security, Privacy & Compliance | NexaFlow AI Trust Center",
+  description:
+    "How NexaFlow AI protects your business data: encryption, access controls, DPAs, monitoring, and secure API handling.",
+};
 
 const complianceFeatures = [
   {

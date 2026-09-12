@@ -1,6 +1,9 @@
 import Hero from "@/components/home/Hero";
 import TrustedBy from "@/components/home/TrustedBy";
+import ProblemSection from "@/components/home/ProblemSection";
+import ProcessSection from "@/components/home/ProcessSection";
 import ServiceCategories from "@/components/home/ServiceCategories";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import LatestContent from "@/components/home/LatestContent";
 import FAQSection from "@/components/home/FAQSection";
@@ -11,7 +14,10 @@ export default function Home() {
     <main>
       <Hero />
       <TrustedBy />
+      <ProblemSection />
+      <ProcessSection />
       <ServiceCategories />
+      <WhyChooseUs />
       <Testimonials />
       <LatestContent />
       <FAQSection />

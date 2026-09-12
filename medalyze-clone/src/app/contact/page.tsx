@@ -1,9 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { contactInfo } from "@/lib/constants";
 import { Mail, Phone, MapPin, Clock, ChevronRight } from "lucide-react";
 import ContactForm from "./ContactForm";
 import CTASection from "@/components/home/CTASection";
 import Container from "@/components/ui/Container";
+
+export const metadata: Metadata = {
+  title: "Contact NexaFlow AI — Book a Free AI Audit",
+  description:
+    "Get in touch with NexaFlow AI to discuss your AI automation needs. Free consultation available.",
+};
 
 const contactCards = [
   { icon: MapPin, label: "Address", value: contactInfo.address },
@@ -34,11 +41,12 @@ export default function ContactPage() {
 
           <div className="max-w-3xl">
             <h1 className="heading-h3 !text-[var(--text-heading)]">
-              Get in Touch
+              Let&apos;s Find Where AI Automation Can Save You the Most Time
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              We&apos;d love to hear from you. Our team is ready to help automate your
-              business.
+              Tell us about your business and current workflows. We&apos;ll review
+              where manual work is costing you time and money—and show you exactly
+              what can be automated.
             </p>
           </div>
 
@@ -77,12 +85,12 @@ export default function ContactPage() {
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
             <div>
               <h2 className="heading-h4 !text-[var(--text-heading)]">
-                Let&apos;s Start a Conversation
+                Book a Free AI Automation Audit
               </h2>
               <p className="mt-4 text-lg text-[var(--text-primary)]">
                 Based in Austin, TX, NexaFlow serves growing businesses
                 worldwide. Reach out to learn how we can automate your
-                sales and operations.
+                sales and operations—no obligation.
               </p>
 
               <div className="mt-10 space-y-6">

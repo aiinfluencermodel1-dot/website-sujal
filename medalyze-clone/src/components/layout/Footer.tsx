@@ -18,6 +18,8 @@ const footerCols = [
     links: [
       { label: "About", href: "/about" },
       { label: "Testimonials", href: "/testimonials" },
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "FAQ", href: "/faq" },
       { label: "Compliance", href: "/compliance" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },

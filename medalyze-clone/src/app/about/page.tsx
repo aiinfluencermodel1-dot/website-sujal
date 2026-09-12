@@ -1,8 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { companyData, logoUrl, assets } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
+
+export const metadata: Metadata = {
+  title: "About NexaFlow AI — AI Automation Experts",
+  description:
+    "Learn how NexaFlow AI helps companies replace manual work with intelligent AI systems and custom automation.",
+};
 
 const heroStats = [
   { value: "120+", label: "Automations Shipped" },
@@ -69,8 +76,11 @@ export default function AboutPage() {
               </span>
             </div>
             <h1 className="heading-h3 !text-[var(--text-heading)]">
-              {companyData.tagline}
+              About NexaFlow AI
             </h1>
+            <h2 className="mt-4 text-xl font-medium text-[var(--text-primary)]">
+              We Build the AI Systems That Take Repetitive Work Off Your Plate
+            </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
               {companyData.description}
             </p>
@@ -131,10 +141,74 @@ export default function AboutPage() {
 
       <section className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
-          <div className="max-w-3xl">
-            <h2 className="heading-h3 !text-[var(--text-heading)]">
-              Inspirational Growth - Our Vision and Mission
-            </h2>
+            <div className="max-w-3xl">
+              <h2 className="heading-h3 !text-[var(--text-heading)]">
+                Our Approach
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
+                {companyData.philosophy}
+              </p>
+            </div>
+
+            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Process-first, not tech-first",
+                  text: "We study your workflow before recommending any tool or AI model.",
+                },
+                {
+                  title: "Integration over disruption",
+                  text: "We build automation into your existing systems rather than forcing you to switch tools.",
+                },
+                {
+                  title: "Outcomes over features",
+                  text: "We measure success in hours saved, errors reduced, and revenue impact—not features shipped.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="hairline">
+                  <div className="hairline-inner p-8">
+                    <h3 className="text-xl font-semibold text-[var(--text-heading)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 leading-relaxed text-[var(--text-primary)]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 max-w-3xl">
+              <h2 className="heading-h3 !text-[var(--text-heading)]">
+                Who We Work With
+              </h2>
+              <div className="mt-10 flex flex-wrap gap-3">
+                {[
+                  "Small & medium businesses",
+                  "Agencies",
+                  "Enterprises",
+                  "Startups",
+                ].map((who) => (
+                  <div key={who} className="chip-border">
+                    <div className="chip">
+                      <span className="chip-label">{who}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-8 text-lg leading-relaxed text-[var(--text-primary)]">
+                Small and medium businesses that want to scale without
+                proportionally scaling headcount. Agencies that need to deliver
+                more client work without more hires. Enterprises modernizing
+                legacy, manual processes. Startups that want lean, automated
+                operations from day one.
+              </p>
+            </div>
+
+            <div className="mt-20 max-w-3xl">
+              <h2 className="heading-h3 !text-[var(--text-heading)]">
+                Inspirational Growth - Our Vision and Mission
+              </h2>
             <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
               We are driven by a shared purpose to transform how businesses
               operate through the careful combination of advanced AI and

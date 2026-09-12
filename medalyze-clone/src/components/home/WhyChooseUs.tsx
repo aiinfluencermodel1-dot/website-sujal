@@ -15,12 +15,12 @@ export default function WhyChooseUs() {
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-heading)] sm:text-4xl lg:text-5xl">
-              A Smarter Way to Manage Healthcare Revenue
+              Why Businesses Choose NexaFlow AI
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[var(--text-muted)]">
-              Our integrated platform combines AI automation with expert
-              human oversight to deliver faster reimbursements, fewer
-              denials, and complete visibility into your revenue cycle.
+              Custom-built automation, integrated into the tools you already
+              use—measured in hours saved and revenue earned, and supported
+              long after launch.
             </p>
           </div>
 
