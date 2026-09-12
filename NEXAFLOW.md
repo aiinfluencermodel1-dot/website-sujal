@@ -25,9 +25,7 @@ name/address/email/phone + Texas/Travis County law — update both if contact ch
 | Route | File | Notes |
 |---|---|---|
 | `/` homepage | `src/app/page.tsx` (section order) | Hero → TrustedBy → Problem → Process → Pillars → WhyUs → Testimonials → Blog → FAQ → CTA |
-| Hero | `src/components/home/Hero.tsx` | H1, sub, AEO snippet, pills (`heroPills`), dual CTA, hero image |
-| 3D hero scene | `src/components/3d/HeroScene.tsx` | R3F canvas: wireframe core, orbit rings, particles, starfield, mouse parallax |
-| Tilt cards | `src/components/ui/TiltCard.tsx` | Mouse 3D tilt + glare; used on pillar visuals + use-case cards |
+| Hero | `src/components/home/Hero.tsx` | H1, sub, AEO snippet, pills (`heroPills`), dual CTA, hero image, orbiting icons |
 | Trusted-by + stats | `src/components/home/TrustedBy.tsx` | Client names (`partnerLogos`), stats from `trustedByData` |
 | Problem | `src/components/home/ProblemSection.tsx` | H2 + 6 warning signs + AEO snippet (all hardcoded) |
 | Process (3 steps) | `src/components/home/ProcessSection.tsx` | H2 + 3 steps in `steps[]` |

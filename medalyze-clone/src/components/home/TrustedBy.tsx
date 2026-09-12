@@ -91,28 +91,18 @@ export default function TrustedBy() {
             Trusted by Forward-Thinking Businesses
           </p>
 
-          <div
-            className="mt-12 overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)",
-              WebkitMaskImage:
-                "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)",
-            }}
-          >
-            <div className="animate-marquee flex w-max items-center gap-10 md:gap-16">
-              {[...partnerLogos, ...partnerLogos].map((partner, i) => (
-                <div
-                  key={`${partner.name}-${i}`}
-                  className="flex shrink-0 items-center gap-2 text-[var(--text-muted)] opacity-50 transition-opacity hover:opacity-100"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--text-muted)]/10 text-xs font-bold">
-                    {partner.abbr}
-                  </div>
-                  <span className="text-sm font-medium">{partner.name}</span>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {partnerLogos.map((partner) => (
+              <div
+                key={partner.name}
+                className="flex items-center gap-2 text-[var(--text-muted)] opacity-50 transition-opacity hover:opacity-100"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--text-muted)]/10 text-xs font-bold">
+                  {partner.abbr}
                 </div>
-              ))}
-            </div>
+                <span className="text-sm font-medium">{partner.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
