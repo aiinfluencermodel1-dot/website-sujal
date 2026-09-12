@@ -115,7 +115,7 @@ export default function ContactForm() {
           />
           <label htmlFor="consent" className="text-xs leading-relaxed text-[var(--text-muted)]">
             By submitting this form, you agree to receive communications
-            from Medalyze Medtech LLC. We respect your privacy and will
+            from NexaFlow AI LLC. We respect your privacy and will
             never share your information with third parties. You may
             unsubscribe at any time.
           </label>

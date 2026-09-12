@@ -13,10 +13,10 @@ const contactCards = [
 ];
 
 const features = [
-  "End-to-end revenue cycle management",
-  "AI-powered billing automation",
-  "99.9% claim accuracy rate",
-  "Real-time revenue analytics",
+  "AI chatbots & voice agents",
+  "CRM & workflow automation",
+  "2–4 week deployment",
+  "Measurable ROI reporting",
 ];
 
 export default function ContactPage() {
@@ -37,8 +37,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              We&apos;d love to hear from you. Our team is ready to help optimize your
-              revenue cycle.
+              We&apos;d love to hear from you. Our team is ready to help automate your
+              business.
             </p>
           </div>
 
@@ -80,9 +80,9 @@ export default function ContactPage() {
                 Let&apos;s Start a Conversation
               </h2>
               <p className="mt-4 text-lg text-[var(--text-primary)]">
-                Based in St. Petersburg, FL, Medalyze serves healthcare providers
-                across all 50 states. Reach out to learn how we can streamline your
-                revenue cycle.
+                Based in Austin, TX, NexaFlow serves growing businesses
+                worldwide. Reach out to learn how we can automate your
+                sales and operations.
               </p>
 
               <div className="mt-10 space-y-6">
@@ -93,10 +93,10 @@ export default function ContactPage() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-[var(--text-heading)]">
-                        Based in St. Petersburg, FL
+                        Based in Austin, TX
                       </p>
                       <p className="mt-1 text-sm text-[var(--text-muted)]">
-                        Serving healthcare providers across all 50 states
+                        Serving growing businesses worldwide
                       </p>
                     </div>
                   </div>

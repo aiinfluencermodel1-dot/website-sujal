@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
         <div className="container-page max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-invert max-w-none">
             <p className="text-[var(--text-primary)]">
-              Medalyze Medtech LLC (&quot;Medalyze,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
+              NexaFlow AI LLC (&quot;NexaFlow,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
               is committed to protecting your privacy. This Privacy Policy explains how
               we collect, use, disclose, and safeguard your information when you visit
               our website and use our services.
@@ -154,26 +154,26 @@ export default function PrivacyPolicyPage() {
                 your rights, please contact us:
               </p>
               <p className="mt-3">
-                <strong>Medalyze Medtech LLC</strong>
+                <strong>NexaFlow AI LLC</strong>
                 <br />
-                7901, 4th St N, STE #300
+                600 Congress Ave, STE #1400
                 <br />
-                St Petersburg, FL 33702
+                Austin, TX 78701
                 <br />
                 Email:{" "}
                 <a
-                  href="mailto:info@medalyzeus.com"
+                  href="mailto:info@nexaflow.ai"
                   className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
-                  info@medalyzeus.com
+                  info@nexaflow.ai
                 </a>
                 <br />
                 Phone:{" "}
                 <a
-                  href="tel:+17272085953"
+                  href="tel:+14155550132"
                   className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
-                  +1 (727) 208 5953
+                  +1 (415) 555-0132
                 </a>
               </p>
             </div>

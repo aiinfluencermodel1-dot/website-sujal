@@ -19,7 +19,7 @@ export default function LatestContent() {
         {/* Section header - Commure style */}
         <div className="text-center">
           <h2 className="heading-h3">
-            Insights for Better Revenue
+            Playbooks for Business on Autopilot
           </h2>
           <p className="text-regular mt-4 text-[var(--text-muted)]">
             Stay informed with the latest trends and strategies in revenue

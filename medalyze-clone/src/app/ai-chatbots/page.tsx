@@ -2,60 +2,60 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
-  ShieldAlert,
-  TrendingUp,
-  RefreshCw,
-  AlertTriangle,
-  CheckCircle,
-  BarChart,
+  Bot,
+  MessagesSquare,
+  CalendarCheck,
+  Zap,
+  Globe,
+  ShieldCheck,
 } from "lucide-react";
 
 const features = [
   {
-    icon: AlertTriangle,
-    title: "Root Cause Analysis",
+    icon: Bot,
+    title: "24/7 Instant Answers",
     description:
-      "AI-powered analysis identifies the exact reason behind every denial—whether coding errors, missing documentation, or payer policy changes.",
+      "Your chatbot replies in under 5 seconds, day or night—so no lead ever waits and no question goes unanswered.",
   },
   {
-    icon: RefreshCw,
-    title: "Automated Appeals",
+    icon: MessagesSquare,
+    title: "Lead Capture & Qualification",
     description:
-      "Generate and submit appeal letters automatically with supporting documentation, reducing manual work and accelerating reimbursement.",
+      "Interactive conversations collect contact details, qualify intent, and route hot leads straight to your calendar or CRM.",
   },
   {
-    icon: ShieldAlert,
-    title: "Predictive Prevention",
+    icon: CalendarCheck,
+    title: "Automatic Booking",
     description:
-      "Machine learning models flag claims at high risk of denial before submission, enabling corrections that prevent denials entirely.",
+      "Visitors book calls, demos, or appointments inside the chat—synced with your calendar and confirmed by SMS and email.",
   },
   {
-    icon: TrendingUp,
-    title: "Pattern Recognition",
+    icon: Zap,
+    title: "Trained on Your Business",
     description:
-      "Monitor every denied claim's status from identification through resolution with live dashboards and proactive status updates.",
+      "We train the AI on your offers, FAQs, pricing, and policies, so every answer sounds like your best salesperson.",
   },
   {
-    icon: BarChart,
-    title: "Performance Tracking",
+    icon: Globe,
+    title: "Website + WhatsApp + SMS",
     description:
-      "Resubmit batches of corrected claims in one action, dramatically reducing the time and effort needed to recover lost revenue.",
+      "One brain across every channel—your site, WhatsApp, Instagram DMs, and SMS—with a single conversation history.",
   },
   {
-    icon: CheckCircle,
-    title: "Payer Intelligence",
+    icon: ShieldCheck,
+    title: "Human Handoff",
     description:
-      "Comprehensive audit trails and denial reports ensure compliance with payer requirements and internal governance standards.",
+      "Tricky questions escalate to your team instantly with full context, so customers always feel taken care of.",
   },
 ];
 
 const stats = [
-  { value: "95%", label: "appeal success rate" },
-  { value: "40%", label: "fewer denials" },
-  { value: "3x", label: "faster resolution" },
+  { value: "<5s", label: "avg. response time" },
+  { value: "24/7", label: "availability" },
+  { value: "2x", label: "more bookings" },
 ];
 
-export default function DenialManagementPage() {
+export default function AiChatbotsPage() {
   return (
     <main>
       <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
@@ -68,32 +68,32 @@ export default function DenialManagementPage() {
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
+            <Link href="/#services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page" className="text-[var(--text-heading)]">
-              Denial Management
+              AI Chatbots
             </span>
           </nav>
 
           <div className="max-w-3xl">
             <span className="chip-border">
               <span className="chip">
-                <span className="chip-label">REVENUE INTEGRITY</span>
+                <span className="chip-label">AI ENGAGEMENT</span>
               </span>
             </span>
             <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
-              AI-Powered Denial Management
+              AI Chatbots That Sell While You Sleep
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              Never make the same mistake twice. Predict, prevent, and appeal
-              denials with intelligent automation that recovers revenue and
-              strengthens your claims process.
+              Turn your website into your hardest-working salesperson. Our custom
+              AI chatbots capture leads, answer questions, and book meetings
+              around the clock—without adding headcount.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn btn-v2">
-                Get Assessment
+                Get In Touch
               </Link>
               <a href="#features" className="btn btn-v2 btn-outline">
                 Explore Features
@@ -107,11 +107,11 @@ export default function DenialManagementPage() {
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-h3 !text-[var(--text-heading)]">
-              Fight Denials with Intelligence
+              Everything Your Chatbot Needs
             </h2>
             <p className="mt-4 text-lg text-[var(--text-primary)]">
-              A complete denial management platform that finds root causes,
-              automates appeals, and prevents future denials before they happen.
+              Built to capture more leads, book more calls, and deliver instant
+              answers your visitors will love.
             </p>
           </div>
 

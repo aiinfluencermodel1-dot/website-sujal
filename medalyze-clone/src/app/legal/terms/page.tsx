@@ -31,7 +31,7 @@ export default function TermsAndConditionsPage() {
         <div className="container-page max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-invert max-w-none">
             <p className="text-[var(--text-primary)]">
-              Welcome to Medalyze Medtech LLC (&quot;Medalyze,&quot; &quot;we,&quot; &quot;us,&quot;
+              Welcome to NexaFlow AI LLC (&quot;NexaFlow,&quot; &quot;we,&quot; &quot;us,&quot;
               or &quot;our&quot;). These Terms and Conditions govern your use of our website
               and services. By accessing or using our website or engaging our services,
               you agree to be bound by these Terms.
@@ -59,7 +59,7 @@ export default function TermsAndConditionsPage() {
             </h2>
             <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
-                Medalyze provides end-to-end revenue cycle management (RCM) solutions
+                NexaFlow provides AI automation services, including AI chatbots, voice agents, workflow and CRM automation, lead generation systems, content engines, and analytics dashboards
                 for medical and dental practices, including but not limited to:
               </p>
               <ul className="ml-6 list-disc space-y-1">
@@ -77,7 +77,7 @@ export default function TermsAndConditionsPage() {
               <p>
                 Service-specific terms, deliverables, and pricing are outlined in
                 individual service agreements or statements of work executed between
-                Medalyze and the client.
+                NexaFlow and the client.
               </p>
             </div>
 
@@ -117,7 +117,7 @@ export default function TermsAndConditionsPage() {
             <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 All content on this website, including text, graphics, logos, icons,
-                images, software, and documentation, is the property of Medalyze
+                images, software, and documentation, is the property of NexaFlow
                 Medtech LLC or its licensors and is protected by United States and
                 international copyright, trademark, and other intellectual property
                 laws.
@@ -127,7 +127,7 @@ export default function TermsAndConditionsPage() {
                 access and use our website for informational purposes. You may not
                 reproduce, distribute, modify, create derivative works of, publicly
                 display, or exploit any content from our website without prior written
-                consent from Medalyze.
+                consent from NexaFlow.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export default function TermsAndConditionsPage() {
             </h2>
             <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
-                To the maximum extent permitted by applicable law, Medalyze Medtech
+                To the maximum extent permitted by applicable law, NexaFlow Medtech
                 LLC shall not be liable for any indirect, incidental, special,
                 consequential, or punitive damages, including but not limited to loss
                 of profits, data, business opportunities, or goodwill, arising out of
@@ -145,7 +145,7 @@ export default function TermsAndConditionsPage() {
               <p>
                 Our total aggregate liability for any claims arising out of or related
                 to these Terms or our services shall not exceed the amount you paid to
-                Medalyze during the twelve (12) months immediately preceding the event
+                NexaFlow during the twelve (12) months immediately preceding the event
                 giving rise to the claim.
               </p>
               <p>
@@ -161,10 +161,10 @@ export default function TermsAndConditionsPage() {
             <div className="mt-4 space-y-4 text-[var(--text-primary)] leading-relaxed">
               <p>
                 These Terms and Conditions shall be governed by and construed in
-                accordance with the laws of the State of Florida, without regard to
+                accordance with the laws of the State of Texas, without regard to
                 its conflict of law provisions. Any disputes arising under these Terms
                 shall be resolved exclusively in the state or federal courts located
-                in Pinellas County, Florida, and you consent to the personal
+                in Travis County, Texas, and you consent to the personal
                 jurisdiction of such courts.
               </p>
             </div>
@@ -190,26 +190,26 @@ export default function TermsAndConditionsPage() {
                 us:
               </p>
               <p className="mt-3">
-                <strong>Medalyze Medtech LLC</strong>
+                <strong>NexaFlow AI LLC</strong>
                 <br />
-                7901, 4th St N, STE #300
+                600 Congress Ave, STE #1400
                 <br />
-                St Petersburg, FL 33702
+                Austin, TX 78701
                 <br />
                 Email:{" "}
                 <a
-                  href="mailto:info@medalyzeus.com"
+                  href="mailto:info@nexaflow.ai"
                   className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
-                  info@medalyzeus.com
+                  info@nexaflow.ai
                 </a>
                 <br />
                 Phone:{" "}
                 <a
-                  href="tel:+17272085953"
+                  href="tel:+14155550132"
                   className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent)]/80"
                 >
-                  +1 (727) 208 5953
+                  +1 (415) 555-0132
                 </a>
               </p>
             </div>

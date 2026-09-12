@@ -2,60 +2,60 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
-  Search,
-  Activity,
-  TrendingUp,
-  Eye,
-  AlertTriangle,
-  Check,
+  PenLine,
+  Video,
+  CalendarCheck,
+  Share2,
+  Sparkles,
+  BarChart3,
 } from "lucide-react";
 
 const features = [
   {
-    icon: Activity,
-    title: "Real-Time Status",
+    icon: PenLine,
+    title: "One Idea, Thirty Assets",
     description:
-      "Track every claim from submission to payment with live status updates at every stage of the revenue cycle.",
+      "A single recording becomes blogs, shorts, carousels, emails, and posts—repurposed by AI, polished by editors.",
   },
   {
-    icon: Eye,
-    title: "Patient Portal",
+    icon: Video,
+    title: "Short-Form Video Engine",
     description:
-      "Give patients a transparent view of their claims, balances, and payer communications in one simple dashboard.",
+      "Hooks, scripts, captions, and posting schedules for Reels, TikTok, and Shorts—produced weekly without burnout.",
   },
   {
-    icon: Search,
-    title: "Provider Dashboard",
+    icon: CalendarCheck,
+    title: "30-Day Content Calendar",
     description:
-      "A consolidated dashboard lets providers monitor claims, spot bottlenecks, and drill into details instantly.",
+      "A full month of content planned, drafted, and scheduled in one sitting. Consistency finally becomes automatic.",
   },
   {
-    icon: AlertTriangle,
-    title: "Alerts & Notifications",
+    icon: Share2,
+    title: "Multichannel Distribution",
     description:
-      "Proactive alerts flag denials, processing delays, and pending actions so nothing slips through the cracks.",
+      "Auto-publish across LinkedIn, Instagram, X, YouTube, and email—formatted natively for each platform.",
   },
   {
-    icon: TrendingUp,
-    title: "Reporting",
+    icon: Sparkles,
+    title: "On-Brand AI Writing",
     description:
-      "Comprehensive analytics and exportable reports deliver insight into performance, trends, and revenue opportunities.",
+      "Trained on your voice, offers, and proof—so every draft sounds like you on your best day, not a robot.",
   },
   {
-    icon: Check,
-    title: "Transparency",
+    icon: BarChart3,
+    title: "Content-to-Revenue Tracking",
     description:
-      "Full end-to-end visibility gives both providers and patients confidence that every claim is accounted for.",
+      "See which topics drive leads and deals. Double down on what converts, cut what doesn't.",
   },
 ];
 
 const stats = [
-  { value: "24/7", label: "live tracking" },
-  { value: "100%", label: "visibility" },
-  { value: "0", label: "missed claims" },
+  { value: "30 days", label: "of content per sprint" },
+  { value: "5x", label: "more output" },
+  { value: "10+", label: "channels covered" },
 ];
 
-export default function LiveClaimTrackingPage() {
+export default function ContentEnginePage() {
   return (
     <main>
       <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
@@ -68,28 +68,28 @@ export default function LiveClaimTrackingPage() {
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
+            <Link href="/#services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page" className="text-[var(--text-heading)]">
-              Live Claim Tracking
+              Content Engine
             </span>
           </nav>
 
           <div className="max-w-3xl">
             <span className="chip-border">
               <span className="chip">
-                <span className="chip-label">ADVANCED SOLUTIONS</span>
+                <span className="chip-label">CONTENT</span>
               </span>
             </span>
             <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
-              Real-Time Claim Tracking for Providers &amp; Patients
+              30 Days of Content From One Workflow
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              Gain complete, real-time visibility into every claim across its
-              lifecycle. From submission to approval and payment, stay informed
-              with transparent dashboards and proactive alerts.
+              Our AI content engine turns one weekly idea into a month of posts,
+              videos, and emails—planned, drafted, and scheduled automatically
+              while staying unmistakably you.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn btn-v2">
@@ -107,11 +107,11 @@ export default function LiveClaimTrackingPage() {
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-h3 !text-[var(--text-heading)]">
-              Complete Claim Visibility, End to End
+              Content That Compounds
             </h2>
             <p className="mt-4 text-lg text-[var(--text-primary)]">
-              Powerful tracking tools designed to keep providers and patients
-              informed at every step of the revenue cycle.
+              A repeatable system for authority, inbound leads, and trust—running
+              every single week without fail.
             </p>
           </div>
 

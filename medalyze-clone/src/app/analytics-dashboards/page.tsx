@@ -2,64 +2,62 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
-  ShieldCheck,
-  FileCheck,
-  Clock,
-  CheckCircle,
-  UserCheck,
-  Award,
+  BarChart3,
+  PieChart,
+  Eye,
+  FileText,
+  Zap,
+  TrendingUp,
 } from "lucide-react";
 
 const features = [
   {
-    icon: ShieldCheck,
-    title: "Payer Enrollment",
+    icon: BarChart3,
+    title: "Real-Time Dashboards",
     description:
-      "Streamlined enrollment with commercial, Medicare, Medicaid, and managed care payers across all 50 states.",
+      "Leads, sales, marketing spend, and team output—live in one dashboard that updates the second things change.",
   },
   {
-    icon: FileCheck,
-    title: "State Licensing",
+    icon: TrendingUp,
+    title: "Revenue Forecasting",
     description:
-      "Expert guidance through state medical board applications, license renewals, and multi-state credentialing requirements.",
+      "AI models project pipeline, cash flow, and seasonal trends—so you plan with data instead of gut feel.",
   },
   {
-    icon: Clock,
-    title: "Re-Credentialing",
+    icon: PieChart,
+    title: "Marketing Attribution",
     description:
-      "Automated tracking and timely submission of re-credentialing applications to prevent any lapse in active status.",
+      "Know exactly which channel, campaign, and keyword created each customer. Kill waste, scale winners.",
   },
   {
-    icon: CheckCircle,
-    title: "CAQH Setup",
+    icon: Eye,
+    title: "Bottleneck Alerts",
     description:
-      "Complete CAQH profile creation and maintenance, ensuring your provider data is always current and accessible to payers.",
+      "Automatic alerts when response times slip, conversion drops, or spend spikes—before small leaks become floods.",
   },
   {
-    icon: UserCheck,
-    title: "Hospital Privileging",
+    icon: FileText,
+    title: "One-Click Reports",
     description:
-      "Navigate hospital credentialing and privileging processes with expert support for expedited approvals.",
+      "Weekly performance summaries generated and delivered automatically. Walk into every Monday knowing the score.",
   },
   {
-    icon: Award,
-    title: "Continuous Monitoring",
+    icon: Zap,
+    title: "Every Tool Connected",
     description:
-      "Ongoing verification of CAQH, NPDB, OIG, and SAM checks to ensure full compliance before payer submission.",
+      "CRM, ads, Stripe, sheets, and email—unified into a single source of truth your whole team actually checks.",
   },
 ];
 
 const stats = [
-  { value: "500+", label: "Providers Credentialed" },
-  { value: "45 days", label: "Average Turnaround" },
-  { value: "98%", label: "First-Pass Success Rate" },
-  { value: "24/7", label: "Monitoring & Support" },
+  { value: "Real-time", label: "live insights" },
+  { value: "100%", label: "data visibility" },
+  { value: "1", label: "dashboard for everything" },
 ];
 
-export default function ProviderCredentialingPage() {
+export default function AnalyticsDashboardsPage() {
   return (
     <main>
-      {/* Hero Section */}
       <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
         <Container size="lg">
           <nav
@@ -70,32 +68,32 @@ export default function ProviderCredentialingPage() {
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
+            <Link href="/#services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page" className="text-[var(--text-heading)]">
-              Provider Credentialing
+              Analytics Dashboards
             </span>
           </nav>
 
           <div className="max-w-3xl">
             <span className="chip-border">
               <span className="chip">
-                <span className="chip-label">PROVIDER CREDENTIALING</span>
+                <span className="chip-label">INSIGHTS</span>
               </span>
             </span>
             <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
-              Fast-Track Provider Credentialing
+              Know Your Numbers, Grow on Purpose
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              Get credentialed faster with expert support across all payers and
-              states. Our team handles the complexity so you can start billing
-              sooner.
+              We build live dashboards and reports that turn scattered data into
+              clear decisions—every lead, dollar, and bottleneck visible in one
+              place, updated in real time.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn btn-v2">
-                Get Assessment
+                Get In Touch
               </Link>
               <a href="#features" className="btn btn-v2 btn-outline">
                 Explore Features
@@ -105,17 +103,15 @@ export default function ProviderCredentialingPage() {
         </Container>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-h3 !text-[var(--text-heading)]">
-              End-to-End Credentialing
+              Clarity That Drives Growth
             </h2>
             <p className="mt-4 text-lg text-[var(--text-primary)]">
-              From initial enrollment to ongoing compliance, we manage every
-              step of the credentialing lifecycle so providers can focus on
-              patient care.
+              Stop guessing. Purpose-built analytics that show what&apos;s working,
+              what&apos;s leaking, and what to do next.
             </p>
           </div>
 
@@ -142,25 +138,21 @@ export default function ProviderCredentialingPage() {
         </Container>
       </section>
 
-      {/* Stats Section */}
       <section className="bg-[var(--bg-primary)] py-24">
         <Container size="lg">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="hairline">
-                <div className="hairline-inner p-8 text-center">
-                  <p className="text-5xl font-bold tracking-tight text-[var(--accent)] lg:text-6xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-3 text-lg text-[var(--text-muted)]">{stat.label}</p>
-                </div>
+              <div key={stat.label} className="text-center">
+                <p className="text-5xl font-bold tracking-tight text-[var(--text-heading)] lg:text-6xl">
+                  {stat.value}
+                </p>
+                <p className="mt-3 text-lg text-[var(--text-muted)]">{stat.label}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* CTA Section */}
       <CTASection />
     </main>
   );

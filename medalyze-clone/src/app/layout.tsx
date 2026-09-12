@@ -4,9 +4,10 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import { ThemeProvider } from "@/lib/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "Medalyze - The AI-Native Enterprise RCM & Ambient Platform",
+  title: "NexaFlow AI - AI Chatbots, Voice Agents & Workflow Automation",
   description:
-    "Turn labor into software with AI-powered intake, documentation, coding, claims, and payment solutions.",
+    "We design and deploy AI chatbots, voice agents, and workflow automations that capture leads, close sales, and eliminate busywork.",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

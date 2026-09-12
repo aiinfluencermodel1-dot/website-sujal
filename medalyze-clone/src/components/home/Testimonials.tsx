@@ -18,7 +18,7 @@ export default function Testimonials() {
             Real People. Real Impact.
           </h2>
           <p className="text-regular mt-4 text-[var(--text-muted)]">
-            Read what Medalyze customers are saying about our interconnected
+            Read what NexaFlow customers are saying about our interconnected
             platform of AI solutions.
           </p>
         </div>

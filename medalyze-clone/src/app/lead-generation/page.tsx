@@ -2,60 +2,60 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
-  Calendar,
-  Clock,
-  BellRing,
-  ShieldCheck,
+  Target,
+  Mail,
+  MessagesSquare,
+  CalendarCheck,
   TrendingUp,
-  Check,
+  Zap,
 } from "lucide-react";
 
 const features = [
   {
-    icon: ShieldCheck,
-    title: "No-Show Prevention",
+    icon: Target,
+    title: "Lead Capture Funnels",
     description:
-      "Smart booking safeguards against no-shows with intelligent reminders, waitlists, and rescheduling options that keep your schedule full.",
+      "High-converting landing pages, quizzes, and chat flows that turn cold traffic into qualified contacts.",
   },
   {
-    icon: Calendar,
-    title: "Smart Scheduling",
+    icon: Zap,
+    title: "Speed-to-Lead",
     description:
-      "AI optimizes appointment slots based on provider availability, visit type, and patient preferences to maximize utilization.",
+      "AI responds in seconds across SMS, email, and chat—making you 8x more likely to convert every new lead.",
   },
   {
-    icon: BellRing,
-    title: "Automated Reminders",
+    icon: Mail,
+    title: "Nurture Sequences",
     description:
-      "Multichannel reminders via text, email, and voice keep patients informed and show up on time, every time.",
+      "Multistep email and SMS campaigns that educate, build trust, and book calls on autopilot over 30–90 days.",
   },
   {
-    icon: Clock,
-    title: "Patient Convenience",
+    icon: MessagesSquare,
+    title: "Dead-Lead Revival",
     description:
-      "Patients can book, reschedule, or cancel appointments 24/7 from any device—no phone calls or hold time required.",
+      "AI re-engages your old database with personalized outreach, resurrecting forgotten pipeline into booked calls.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Show-Up Automation",
+    description:
+      "Confirmations, reminders, and rescheduling flows that slash no-shows and keep your calendar full.",
   },
   {
     icon: TrendingUp,
-    title: "Staff Efficiency",
+    title: "ROI Dashboard",
     description:
-      "Automate time-consuming scheduling tasks so front-office staff can focus on more valuable patient interactions.",
-  },
-  {
-    icon: Check,
-    title: "Seamless Integration",
-    description:
-      "Integrates with your EHR and practice management system for a single, unified scheduling workflow.",
+      "Cost per lead, per booking, and per deal—tracked end to end so you scale spend with total confidence.",
   },
 ];
 
 const stats = [
-  { value: "0%", label: "no-shows" },
-  { value: "3x", label: "booking speed" },
-  { value: "24/7", label: "availability" },
+  { value: "8x", label: "higher conversion" },
+  { value: "5+", label: "auto touches per lead" },
+  { value: "2x", label: "more booked calls" },
 ];
 
-export default function AiPoweredAppointmentsPage() {
+export default function LeadGenerationPage() {
   return (
     <main>
       <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
@@ -68,28 +68,28 @@ export default function AiPoweredAppointmentsPage() {
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
+            <Link href="/#services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page" className="text-[var(--text-heading)]">
-              AI-Powered Appointments
+              Lead Generation
             </span>
           </nav>
 
           <div className="max-w-3xl">
             <span className="chip-border">
               <span className="chip">
-                <span className="chip-label">ADVANCED SOLUTIONS</span>
+                <span className="chip-label">GROWTH</span>
               </span>
             </span>
             <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
-              AI-Powered Appointments That Never Miss
+              A Lead Machine That Runs Itself
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              Our intelligent scheduling platform combines AI-driven booking,
-              automated reminders, and predictive no-show prevention to keep
-              your practice full and your patients engaged.
+              Capture, nurture, and book leads on autopilot. Our AI lead
+              generation systems respond in seconds, follow up for months, and
+              fill your calendar while you focus on closing.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn btn-v2">
@@ -107,11 +107,11 @@ export default function AiPoweredAppointmentsPage() {
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-h3 !text-[var(--text-heading)]">
-              Everything Your Schedule Needs
+              From Click to Customer, Automatically
             </h2>
             <p className="mt-4 text-lg text-[var(--text-primary)]">
-              Built to reduce no-shows, speed up booking, and deliver a
-              frictionless experience for patients and staff alike.
+              Every stage of your pipeline—capture, nurture, book, remind—handled
+              by systems that never forget and never sleep.
             </p>
           </div>
 

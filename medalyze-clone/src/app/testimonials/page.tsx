@@ -5,9 +5,9 @@ import CTASection from "@/components/home/CTASection";
 import Container from "@/components/ui/Container";
 
 const resultMetrics = [
-  { value: "99.9%", label: "First-pass success rate" },
-  { value: "40%", label: "Faster payment cycles" },
-  { value: "50+", label: "States covered" },
+  { value: "12K+", label: "Hours saved monthly" },
+  { value: "3x", label: "Faster lead response" },
+  { value: "40+", label: "Businesses automated" },
   { value: "24/7", label: "Support" },
 ];
 
@@ -35,8 +35,8 @@ export default function TestimonialsPage() {
               Real People. Real Impact.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              See what medical and dental practices are saying about working
-              with Medalyze.
+              See what growing businesses are saying about working
+              with NexaFlow.
             </p>
           </div>
         </Container>

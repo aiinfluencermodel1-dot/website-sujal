@@ -3,29 +3,27 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Stethoscope,
-  Activity,
-  Shield,
-  FileText,
-  CreditCard,
-  Users,
-  HeartPulse,
-  Building2,
-  Pill,
-  ClipboardList,
+  Bot,
+  Mic,
+  Zap,
+  BarChart3,
+  MessagesSquare,
+  Workflow,
+  CalendarCheck,
+  Rocket,
+  Database,
+  Globe,
   type LucideIcon,
 } from "lucide-react";
 
 const heroPills = [
-  "8+ Years in Business",
-  "50 States Covered",
-  "30+ Health Specialties",
-  "4.8 Google Rating",
+  "120+ Automations Shipped",
+  "12K+ Hours Saved Monthly",
+  "40+ Happy Clients",
+  "4.9 Average Rating",
 ];
-
-const HERO_VIDEO =
-  "https://cdn.prod.website-files.com/66fb0f1ec709d05e0d47be37%2F696fbe0ad0c11b9f2f37eb51_compressed-video_mp4.mp4";
 
 /* ── Full-page arc dome geometry (SVG viewBox 1600 x 950) ───────────────── */
 const VB_W = 1600;
@@ -60,7 +58,7 @@ type Orbiter = {
 
 const ORBITERS: Orbiter[] = [
   // 5 icons on top ring — well spaced
-  ...[Stethoscope, Activity, Shield, HeartPulse, Building2].map((Icon, i) => ({
+  ...[Bot, Mic, Zap, BarChart3, Rocket].map((Icon, i) => ({
     arc: ARC_TOP,
     dir: 1 as const,
     duration: 32000,
@@ -68,7 +66,7 @@ const ORBITERS: Orbiter[] = [
     Icon,
   })),
   // 5 icons on middle ring — well spaced, different speed
-  ...[FileText, CreditCard, Users, Pill, ClipboardList].map((Icon, i) => ({
+  ...[MessagesSquare, Workflow, CalendarCheck, Database, Globe].map((Icon, i) => ({
     arc: ARC_MID,
     dir: -1 as const,
     duration: 40000,
@@ -263,7 +261,7 @@ export default function Hero() {
         {/* Clean headline */}
         <div data-fade>
           <h1 className="heading-h1 mx-auto max-w-4xl">
-            The AI-Native Enterprise RCM &amp; Billing Platform
+            Put Your Business on Autopilot
           </h1>
         </div>
 
@@ -271,9 +269,8 @@ export default function Hero() {
           data-fade
           className="text-medium mx-auto mt-6 max-w-2xl text-[var(--text-muted)]"
         >
-          Turn labor into software with AI-powered intake, documentation,
-          coding, claims, and payment solutions for medical and dental
-          practices.
+          We build AI chatbots, voice agents, and workflow automations that
+          capture leads, close sales, and eliminate busywork—around the clock.
         </p>
 
         {/* Stat pills */}
@@ -291,18 +288,17 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Hero video */}
+        {/* Hero visual */}
         <div data-fade className="mx-auto mt-36 max-w-[52rem]">
           <div className="relative rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)]/40 p-2 backdrop-blur-sm">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl">
-              <video
-                muted
-                loop
-                autoPlay
-                playsInline
-                src={HERO_VIDEO}
-                poster="https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg"
+              <Image
+                src="/images/hero-poster.jpg"
+                alt="NexaFlow AI automation platform"
+                fill
                 className="h-full w-full object-cover"
+                priority
+                sizes="(min-width: 1024px) 832px, 100vw"
               />
             </div>
           </div>
@@ -317,7 +313,7 @@ export default function Hero() {
             href="/contact"
             className="rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,244,255,0.3)]"
           >
-            Get Assessment
+            Book a Free Audit
           </Link>
         </div>
       </div>

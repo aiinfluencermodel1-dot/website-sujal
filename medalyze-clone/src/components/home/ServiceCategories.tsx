@@ -11,9 +11,9 @@ import { ArrowRight, Smartphone, Monitor, Tablet } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const visuals = [
-  "https://medalyzeus.com/wp-content/uploads/2026/01/1.png",
-  "https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg",
-  "https://medalyzeus.com/wp-content/uploads/2026/01/Your-paragraph-text.png",
+  "/images/visual-engage.jpg",
+  "/images/visual-automate.jpg",
+  "/images/visual-scale.jpg",
 ];
 
 const deviceIcons = [Smartphone, Monitor, Tablet];
@@ -89,11 +89,11 @@ export default function ServiceCategories() {
         {/* Section header - Commure style */}
         <div className="mx-auto max-w-3xl text-center" data-reveal>
           <h2 className="heading-h3">
-            One Data Model. End-to-End RCM Automation.
+            One Partner. Total Business Automation.
           </h2>
           <p className="text-medium mx-auto mt-6 max-w-2xl text-[var(--text-muted)]">
-            Connect the patient&apos;s first call and the doctor&apos;s note
-            directly to the ledger. Integrated across 60+ EHR platforms.
+            Connect your first click and your closed deal directly to your
+            bottom line. Integrated with 100+ tools you already use.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function ServiceCategories() {
                         <DeviceIcon className="h-5 w-5 text-[var(--accent)]" />
                       </div>
                       <span className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">
-                        {i === 0 ? "Front End" : i === 1 ? "Mid Cycle" : "Back End"}
+                        {i === 0 ? "Engage" : i === 1 ? "Automate" : "Scale"}
                       </span>
                     </div>
                     <h3 className="text-xlarge">

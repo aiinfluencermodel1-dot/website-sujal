@@ -5,12 +5,12 @@ import Image from "next/image";
 import { trustedByData, assets } from "@/lib/constants";
 
 const partnerLogos = [
-  { name: "City Health Hospital", abbr: "CH" },
-  { name: "Valley Medical Center", abbr: "VM" },
-  { name: "Coastal Dental Group", abbr: "CD" },
-  { name: "Summit Care Clinic", abbr: "SC" },
-  { name: "Metro Health Partners", abbr: "MH" },
-  { name: "Pinnacle Medical", abbr: "PM" },
+  { name: "Vertex SaaS", abbr: "VX" },
+  { name: "Bloom E-commerce", abbr: "BL" },
+  { name: "NorthPeak Realty", abbr: "NP" },
+  { name: "Brightline Agency", abbr: "BA" },
+  { name: "CoreFit Studios", abbr: "CF" },
+  { name: "Lumen Legal", abbr: "LL" },
 ];
 
 interface CountUpStatProps {
@@ -88,7 +88,7 @@ export default function TrustedBy() {
       <div className="border-b border-[var(--border-subtle)] py-16 md:py-20">
         <div className="container-page">
           <p className="text-small text-center uppercase tracking-[0.2em] text-[var(--text-muted)]">
-            Trusted by Leading Health Systems
+            Trusted by Forward-Thinking Businesses
           </p>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-10 md:gap-16">
@@ -121,7 +121,7 @@ export default function TrustedBy() {
 
         <div className="container-page relative">
           <h2 className="heading-h3 text-center">
-            Proven Outcomes from Deploying Medalyze
+            Proven Outcomes from Deploying NexaFlow
           </h2>
 
           <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-8 md:grid-cols-4">

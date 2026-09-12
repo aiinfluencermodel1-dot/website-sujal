@@ -2,60 +2,60 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 import {
-  Activity,
-  TrendingUp,
-  PieChart,
-  Users,
-  DollarSign,
-  BarChart,
+  Mic,
+  PhoneCall,
+  CalendarCheck,
+  Languages,
+  BellRing,
+  BarChart3,
 } from "lucide-react";
 
 const features = [
   {
-    icon: Users,
-    title: "Patient Metrics",
+    icon: PhoneCall,
+    title: "Answer Every Call",
     description:
-      "Track patient volume, visit types, referral sources, and demographic trends to understand who your practice serves and how to grow.",
+      "Never miss a call again. Your voice agent picks up on the first ring—nights, weekends, and holidays included.",
   },
   {
-    icon: DollarSign,
-    title: "Revenue Tracking",
+    icon: Mic,
+    title: "Natural Conversations",
     description:
-      "Monitor revenue streams by service line, provider, and location with real-time dashboards that highlight opportunities and risks.",
+      "Human-like voices with real back-and-forth dialogue. Callers get answers, not menus—no hold music, ever.",
   },
   {
-    icon: Activity,
-    title: "Provider Productivity",
+    icon: CalendarCheck,
+    title: "Books Into Your Calendar",
     description:
-      "Measure provider efficiency with metrics on patients seen, procedures performed, and revenue generated per provider per day.",
+      "Qualifies callers and books appointments directly into your calendar, with confirmations sent automatically.",
   },
   {
-    icon: BarChart,
-    title: "Financial Health",
+    icon: Languages,
+    title: "40+ Languages",
     description:
-      "Analyze claim submission velocity, clean claim rates, days in A/R, and collection ratios to optimize your billing operations.",
+      "Serve every caller in their own language with native-quality speech recognition and synthesis.",
   },
   {
-    icon: PieChart,
-    title: "Insurance Mix",
+    icon: BellRing,
+    title: "Instant Follow-up",
     description:
-      "Define and track the key performance indicators that matter most to your practice with fully customizable metric dashboards.",
+      "Every call triggers SMS summaries, CRM notes, and follow-up sequences—your team wakes up to booked calls.",
   },
   {
-    icon: TrendingUp,
-    title: "Custom Dashboards",
+    icon: BarChart3,
+    title: "Call Analytics",
     description:
-      "Surface bottlenecks in scheduling, staffing, and workflow to drive operational improvements that directly impact your bottom line.",
+      "Transcripts, recordings, sentiment, and booking rates for every call. Know exactly what your market is asking.",
   },
 ];
 
 const stats = [
-  { value: "360°", label: "practice view" },
-  { value: "AI-Powered", label: "intelligent insights" },
-  { value: "100%", label: "HIPAA compliant" },
+  { value: "100%", label: "calls answered" },
+  { value: "60%", label: "caller-to-booking rate" },
+  { value: "24/7", label: "coverage" },
 ];
 
-export default function PracticeAnalyticsPage() {
+export default function VoiceAiAgentsPage() {
   return (
     <main>
       <section className="bg-[var(--bg-primary)] py-20 lg:py-28">
@@ -68,33 +68,32 @@ export default function PracticeAnalyticsPage() {
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/services" className="transition-colors hover:text-[var(--text-heading)]">
+            <Link href="/#services" className="transition-colors hover:text-[var(--text-heading)]">
               Services
             </Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page" className="text-[var(--text-heading)]">
-              Practice Analytics
+              Voice AI Agents
             </span>
           </nav>
 
           <div className="max-w-3xl">
             <span className="chip-border">
               <span className="chip">
-                <span className="chip-label">ADVANCED SOLUTIONS</span>
+                <span className="chip-label">VOICE AI</span>
               </span>
             </span>
             <h1 className="heading-h3 mt-6 !text-[var(--text-heading)]">
-              Practice &amp; Hospital Analytics
+              Voice AI Agents That Never Miss a Call
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-primary)]">
-              Get a 360-degree view of your practice or hospital performance
-              with real-time analytics that track patient metrics, revenue,
-              provider productivity, and operational efficiency—all in one
-              place.
+              AI phone agents that answer instantly, qualify callers, and book
+              appointments in natural conversation—so every call becomes revenue
+              instead of a missed opportunity.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn btn-v2">
-                Get Assessment
+                Get In Touch
               </Link>
               <a href="#features" className="btn btn-v2 btn-outline">
                 Explore Features
@@ -108,12 +107,11 @@ export default function PracticeAnalyticsPage() {
         <Container size="lg">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-h3 !text-[var(--text-heading)]">
-              Every Metric That Matters
+              A Call Team That Never Sleeps
             </h2>
             <p className="mt-4 text-lg text-[var(--text-primary)]">
-              Comprehensive analytics built for practices and hospitals that
-              want complete visibility into clinical, financial, and
-              operational performance.
+              Purpose-built to answer, qualify, and book—at a fraction of the
+              cost of a human call team.
             </p>
           </div>
 

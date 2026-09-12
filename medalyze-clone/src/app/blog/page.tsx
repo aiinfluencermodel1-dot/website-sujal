@@ -23,10 +23,10 @@ export default function BlogPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <h1 className="heading-h3">Insights for Better Revenue</h1>
+            <h1 className="heading-h3">Playbooks for Business on Autopilot</h1>
             <p className="mt-6 text-medium text-[var(--text-primary)]">
-              Expert perspectives on revenue cycle management, medical billing,
-              and healthcare technology.
+              Automation playbooks, AI guides, and growth systems that run
+              themselves.
             </p>
           </div>
         </div>

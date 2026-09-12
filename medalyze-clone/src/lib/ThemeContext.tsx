@@ -19,7 +19,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("medalyze-theme") as Theme | null;
+    const stored = localStorage.getItem("nexaflow-theme") as Theme | null;
     if (stored) {
       setTheme(stored);
     } else {
@@ -34,14 +34,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
-    localStorage.setItem("medalyze-theme", theme);
+      localStorage.setItem("nexaflow-theme", theme);
   }, [theme, mounted]);
 
   useEffect(() => {
     if (!mounted) return;
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = (e: MediaQueryListEvent) => {
-      const stored = localStorage.getItem("medalyze-theme");
+      const stored = localStorage.getItem("nexaflow-theme");
       if (!stored) {
         setTheme(e.matches ? "dark" : "light");
       }

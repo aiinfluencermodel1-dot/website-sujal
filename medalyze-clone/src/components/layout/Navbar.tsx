@@ -14,29 +14,28 @@ const MENU_LINKS = [
     key: "solutions",
     columns: [
       {
-        title: "Front End",
+        title: "Engage",
         links: [
-          { name: "Call Center Agents", desc: "24/7 coverage for scheduling, call routing, and more", href: "/ai-powered-appointments" },
-          { name: "Orchestrator", desc: "Unified, AI-powered referral intake", href: "/patient-scheduling" },
-          { name: "Engage", desc: "AI-driven patient experience and care coordination", href: "/patient-scheduling" },
+          { name: "AI Chatbots", desc: "24/7 lead capture, booking & support", href: "/ai-chatbots" },
+          { name: "Voice AI Agents", desc: "AI callers that qualify & book", href: "/voice-ai-agents" },
+          { name: "Chat Widgets", desc: "Website & WhatsApp automation", href: "/ai-chatbots" },
         ],
       },
       {
-        title: "Mid Cycle",
+        title: "Automate",
         links: [
-          { name: "Ambient AI", desc: "Real-time clinical documentation", href: "/ai-medical-scribe" },
-          { name: "Autonomous Coding", desc: "Real-time, AI-driven coding", href: "/medical-coding" },
-          { name: "Commure Pro", desc: "All-in-one clinical intelligence experience", href: "/ai-medical-scribe" },
-          { name: "Live Analytics", desc: "Live RCM analytics and dashboards", href: "/live-rcm-analytics" },
+          { name: "Workflow Automation", desc: "CRM, ops & pipeline on autopilot", href: "/workflow-automation" },
+          { name: "Lead Generation", desc: "Self-running lead machines", href: "/lead-generation" },
+          { name: "Follow-up Sequences", desc: "Email & SMS that never forget", href: "/lead-generation" },
+          { name: "Live Dashboards", desc: "Every metric, real time", href: "/analytics-dashboards" },
         ],
       },
       {
-        title: "Back End",
+        title: "Scale",
         links: [
-          { name: "RCM", desc: "End-to-end medical billing automation", href: "/medical-solutions" },
-          { name: "Denial Management", desc: "Predict, prevent, and appeal denials", href: "/denial-management" },
-          { name: "Live Claim Tracking", desc: "Real-time transparency for patients & providers", href: "/live-claim-tracking" },
-          { name: "Dental RCM", desc: "Specialized dental billing", href: "/dental-solutions" },
+          { name: "Content Engine", desc: "30 days of content, one workflow", href: "/content-engine" },
+          { name: "Analytics", desc: "Decisions backed by live data", href: "/analytics-dashboards" },
+          { name: "AI Consulting", desc: "Roadmap & ongoing support", href: "/contact" },
         ],
       },
     ],
@@ -48,16 +47,16 @@ const MENU_LINKS = [
       {
         title: "Insights",
         links: [
-          { name: "Blog", desc: "Expert perspectives on RCM and AI", href: "/blog" },
+          { name: "Blog", desc: "Automation playbooks & AI guides", href: "/blog" },
           { name: "Customer Stories", desc: "Real impact from our clients", href: "/testimonials" },
-          { name: "Guides", desc: "In-depth RCM resources", href: "/blog" },
+          { name: "Guides", desc: "In-depth automation resources", href: "/blog" },
         ],
       },
       {
         title: "Company",
         links: [
           { name: "About", desc: "Who we are and what we believe", href: "/about" },
-          { name: "Compliance", desc: "Security, privacy, and trust", href: "/compliance" },
+          { name: "Trust Center", desc: "Security, privacy, and trust", href: "/compliance" },
         ],
       },
     ],
@@ -70,14 +69,14 @@ const MENU_LINKS = [
         title: "Who We Are",
         links: [
           { name: "About", desc: "Who we are and what we believe", href: "/about" },
-          { name: "Compliance / Trust Center", desc: "Security, privacy, and compliance", href: "/compliance" },
+          { name: "Trust Center", desc: "Security, privacy, and compliance", href: "/compliance" },
         ],
       },
       {
         title: "Customers",
         links: [
           { name: "Testimonials", desc: "Read what our clients are saying", href: "/testimonials" },
-          { name: "Resources", desc: "Insights for better revenue", href: "/blog" },
+          { name: "Resources", desc: "Playbooks for faster growth", href: "/blog" },
         ],
       },
     ],
@@ -129,7 +128,7 @@ export default function Navbar({
       {/* Announcement bar */}
       <div className="announce-bar px-5 py-2 text-center text-xs tracking-wide">
         <span className="text-[var(--text-heading)]/90">
-          Medical Billing &bull; Dental RCM &bull; AI Scribe &bull; Claims Management &bull; Eligibility Verification
+          AI Chatbots &bull; Voice Agents &bull; CRM Automation &bull; Lead Generation &bull; Content Engines
         </span>
         <Link href="/contact" className="ml-3 text-[var(--accent)] hover:underline">
           Get Started
@@ -141,7 +140,7 @@ export default function Navbar({
         <Link href="/" className="relative z-[1001] flex items-center">
           <Image
             src={logoUrl}
-            alt="Medalyze"
+            alt="NexaFlow AI"
             width={300}
             height={80}
             className="h-14 w-auto object-contain"

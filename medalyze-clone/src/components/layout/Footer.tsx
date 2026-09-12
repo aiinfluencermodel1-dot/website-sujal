@@ -6,11 +6,11 @@ const footerCols = [
   {
     title: "Solutions",
     links: [
-      { label: "Medical RCM", href: "/medical-solutions" },
-      { label: "Dental RCM", href: "/dental-solutions" },
-      { label: "AI Medical Scribe", href: "/ai-medical-scribe" },
-      { label: "Live Claim Tracking", href: "/live-claim-tracking" },
-      { label: "Denial Management", href: "/denial-management" },
+      { label: "AI Chatbots", href: "/ai-chatbots" },
+      { label: "Voice AI Agents", href: "/voice-ai-agents" },
+      { label: "Workflow Automation", href: "/workflow-automation" },
+      { label: "Lead Generation", href: "/lead-generation" },
+      { label: "Content Engine", href: "/content-engine" },
     ],
   },
   {
@@ -39,10 +39,10 @@ export default function Footer({ onContactOpen }: { onContactOpen?: () => void }
         <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
           <div>
             <p className="text-tiny uppercase tracking-widest text-[var(--text-muted)]">
-              Medalyze Medtech LLC
+              NexaFlow AI LLC
             </p>
             <h2 className="heading-h4 mt-2 max-w-xl">
-              Analyze, Automate, Accelerate
+              Automate, Delegate, Scale
             </h2>
           </div>
 
@@ -58,7 +58,7 @@ export default function Footer({ onContactOpen }: { onContactOpen?: () => void }
           <div className="col-span-2 md:col-span-1">
             <Image
               src={logoUrl}
-              alt="Medalyze"
+              alt="NexaFlow AI"
               width={220}
               height={60}
               className="h-12 w-auto object-contain"
@@ -103,7 +103,7 @@ export default function Footer({ onContactOpen }: { onContactOpen?: () => void }
 
         <div className="mt-8 flex flex-col justify-between gap-4 border-t border-[var(--border-subtle)] pt-6 text-tiny text-[var(--text-muted)] sm:flex-row">
           <p>
-            Copyright © {new Date().getFullYear()} Medalyze Medtech LLC. All
+            Copyright © {new Date().getFullYear()} NexaFlow AI LLC. All
             rights reserved.
           </p>
           <p>

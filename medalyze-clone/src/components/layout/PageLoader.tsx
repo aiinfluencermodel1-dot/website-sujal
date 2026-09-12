@@ -20,7 +20,7 @@ export default function PageLoader() {
     <div className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-[var(--bg-primary)] transition-opacity duration-500">
       <Image
         src={logoUrl}
-        alt="Medalyze"
+        alt="NexaFlow AI"
         width={300}
         height={80}
         className="mb-8 h-16 w-auto"

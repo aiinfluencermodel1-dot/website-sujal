@@ -5,19 +5,19 @@ import Container from "@/components/ui/Container";
 import CTASection from "@/components/home/CTASection";
 
 const heroStats = [
-  { value: "8+", label: "Years of Business" },
-  { value: "50", label: "States Covered" },
-  { value: "30+", label: "Health Specialties" },
+  { value: "120+", label: "Automations Shipped" },
+  { value: "40+", label: "Happy Clients" },
+  { value: "12K+", label: "Hours Saved Monthly" },
 ];
 
 const rcmServices = [
-  "Patient intake",
-  "Eligibility checks",
-  "Claim creation & submission",
-  "Denial management",
-  "Accounts receivable follow-ups",
-  "Payment posting",
-  "Revenue analytics",
+  "AI chatbots",
+  "Voice agents",
+  "CRM automation",
+  "Lead generation",
+  "Follow-up sequences",
+  "Content engines",
+  "Analytics dashboards",
 ];
 
 const missionVisionValues = [
@@ -31,8 +31,8 @@ export default function AboutPage() {
     <main>
       <section className="relative overflow-hidden bg-[var(--bg-primary)] py-24 lg:py-32">
         <Image
-          src="https://medalyzeus.com/wp-content/uploads/2026/03/mazdoc1.jpg"
-          alt="Healthcare professionals providing care"
+          src="/images/about-office.jpg"
+          alt="NexaFlow team building automations"
           fill
           className="object-cover opacity-20"
           priority
@@ -59,13 +59,13 @@ export default function AboutPage() {
             <div className="mb-6 flex items-center">
               <Image
                 src={logoUrl}
-                alt="Medalyze logo"
+                alt="NexaFlow AI logo"
                 width={40}
                 height={40}
                 className="h-10 w-10 object-contain"
               />
               <span className="ml-3 text-sm font-medium text-[var(--accent)]">
-                About Medalyze
+                About NexaFlow
               </span>
             </div>
             <h1 className="heading-h3 !text-[var(--text-heading)]">
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div className="hairline-inner overflow-hidden rounded-[0.625rem]">
                 <Image
                   src={assets.aboutPoster}
-                  alt="Medalyze social media poster highlighting revenue cycle solutions"
+                  alt="NexaFlow automation systems overview"
                   width={720}
                   height={720}
                   className="w-full object-cover"
@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h2 className="heading-h4 !text-[var(--text-heading)]">
-                End-to-End Revenue Cycle Management
+                End-to-End Business Automation
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
                 {companyData.philosophy}
@@ -136,9 +136,9 @@ export default function AboutPage() {
               Inspirational Growth - Our Vision and Mission
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[var(--text-primary)]">
-              We are driven by a shared purpose to transform healthcare
-              revenue operations through the careful combination of advanced
-              technology and human expertise.
+              We are driven by a shared purpose to transform how businesses
+              operate through the careful combination of advanced AI and
+              human expertise.
             </p>
           </div>
 

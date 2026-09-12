@@ -13,21 +13,21 @@ import {
 const complianceFeatures = [
   {
     icon: ShieldCheck,
-    title: "HIPAA Compliance",
+    title: "GDPR & Privacy Ready",
     description:
-      "Adherence to HIPAA regulations ensuring protected health information is handled with the highest standards of confidentiality and integrity.",
+      "Privacy-first builds with data minimization, clear consent flows, and regional compliance for GDPR and CCPA from day one.",
   },
   {
     icon: FileCheck,
-    title: "SOC 2 Type II",
+    title: "Security Reviews",
     description:
-      "Audited controls across security, availability, and confidentiality, validated by independent third-party examination of our systems.",
+      "Documented controls across security, availability, and confidentiality—reviewed regularly as our automations evolve.",
   },
   {
     icon: Lock,
     title: "Data Encryption",
     description:
-      "End-to-end encryption for data in transit and at rest, using industry-standard cryptographic protocols to protect sensitive information.",
+      "End-to-end encryption for data in transit and at rest, using industry-standard cryptographic protocols to protect your business data.",
   },
   {
     icon: Server,
@@ -39,26 +39,26 @@ const complianceFeatures = [
     icon: KeyRound,
     title: "Access Controls",
     description:
-      "Role-based access, least-privilege principles, and multi-factor authentication ensuring only authorized personnel reach your data.",
+      "Role-based access, least-privilege principles, and multi-factor authentication ensuring only authorized personnel reach your systems.",
   },
   {
     icon: Eye,
     title: "Auditing & Monitoring",
     description:
-      "Comprehensive logging, real-time monitoring, and regular security assessments to detect and respond to threats proactively.",
+      "Comprehensive logging, real-time monitoring, and regular reviews to detect and respond to issues proactively.",
   },
 ];
 
 const securityFeatures = [
   {
-    title: "Business Associate Agreements",
+    title: "Data Processing Agreements",
     description:
-      "We execute BAAs with every client, formally documenting our obligations to safeguard protected health information on your behalf.",
+      "We sign DPAs with every client, formally documenting how your business data is handled, stored, and protected.",
   },
   {
-    title: "Secure PHI Handling",
+    title: "Secure API Handling",
     description:
-      "Protected health information is processed, transmitted, and stored using secure workflows designed around strict data minimization.",
+      "Credentials and tokens are stored encrypted, scoped to least privilege, and rotated—never hardcoded or exposed.",
   },
   {
     title: "Employee Security Training",
@@ -99,9 +99,9 @@ export default function CompliancePage() {
               Security, Privacy, and Compliance
             </h1>
             <p className="mt-6 text-medium text-[var(--text-primary)]">
-              Your patient data deserves enterprise-grade protection. We build
-              compliance, security, and privacy into every layer of our
-              platform—so you can focus on care, not risk.
+              Your business data deserves enterprise-grade protection. We build
+              security and privacy into every automation we ship—so you can
+              focus on growth, not risk.
             </p>
           </div>
         </div>
@@ -144,12 +144,12 @@ export default function CompliancePage() {
               Enterprise-grade security built into every layer
             </h2>
             <p className="mt-6 text-medium text-[var(--text-primary)]">
-              Medalyze processes sensitive protected health information (PHI)
-              on behalf of healthcare providers. That responsibility drives
-              every decision we make. We maintain strict HIPAA compliance,
-              apply robust data protection measures, and ensure that every
-              member of our team is trained and accountable for safeguarding
-              patient data—from intake through final reimbursement.
+              NexaFlow connects to the systems that run your business—your CRM,
+              inbox, calendar, and payment tools. That responsibility drives
+              every decision we make. We apply robust data protection measures,
+              encrypt credentials end to end, and ensure every member of our
+              team is trained and accountable for safeguarding client
+              data—from first lead to closed deal.
             </p>
           </div>
 
